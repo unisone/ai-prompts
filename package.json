@@ -1,0 +1,68 @@
+{
+  "name": "ai-prompts",
+  "version": "1.0.0",
+  "description": "Curated collection of production-ready AI prompts for Claude, GPT, and Gemini",
+  "author": "Alex Zaytsev <alexvzay@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unisone/ai-prompts.git"
+  },
+  "homepage": "https://github.com/unisone/ai-prompts#readme",
+  "bugs": {
+    "url": "https://github.com/unisone/ai-prompts/issues"
+  },
+  "keywords": [
+    "ai",
+    "prompts",
+    "claude",
+    "gpt",
+    "gemini",
+    "llm",
+    "prompt-engineering",
+    "chatgpt",
+    "anthropic",
+    "openai"
+  ],
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "lint": "pnpm run lint:md && pnpm run lint:format",
+    "lint:md": "markdownlint-cli2 \"**/*.md\" \"!node_modules\"",
+    "lint:format": "prettier --check .",
+    "lint:links": "lychee --verbose --no-progress \"**/*.md\"",
+    "lint:spell": "cspell \"**/*.md\" --no-progress",
+    "format": "prettier --write .",
+    "format:md": "markdownlint-cli2 --fix \"**/*.md\" \"!node_modules\"",
+    "validate": "pnpm run lint && pnpm run lint:links",
+    "prepare": "husky",
+    "pre-commit": "lint-staged"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.0",
+    "@commitlint/config-conventional": "^20.3.1",
+    "cspell": "^9.6.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.3.0",
+    "lychee": "^0.6.0",
+    "markdownlint-cli2": "^0.20.0",
+    "prettier": "^3.4.0"
+  },
+  "lint-staged": {
+    "*.md": [
+      "markdownlint-cli2 --fix",
+      "prettier --write"
+    ],
+    "*.{json,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  }
+}
