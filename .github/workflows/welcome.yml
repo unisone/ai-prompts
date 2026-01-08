@@ -1,0 +1,51 @@
+name: Welcome
+
+on:
+  issues:
+    types: [opened]
+  pull_request_target:
+    types: [opened]
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  welcome:
+    name: Welcome New Contributors
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Welcome first-time contributors
+        uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          
+          issue-message: |
+            👋 Welcome to AI Prompts Library, @${{ github.actor }}!
+
+            Thank you for opening your first issue. We appreciate you taking the time to contribute!
+
+            **A few tips:**
+            - Make sure you've read our [Contributing Guidelines](../blob/main/CONTRIBUTING.md)
+            - Check if a similar issue already exists
+            - Provide as much detail as possible
+
+            A maintainer will review your issue soon. In the meantime, feel free to explore the [existing prompts](../tree/main/coding)!
+
+            Happy prompting! 🚀
+          
+          pr-message: |
+            🎉 Welcome to AI Prompts Library, @${{ github.actor }}!
+
+            Thank you for your first pull request! We're excited to have you contribute.
+
+            **Before we review:**
+            - [ ] Ensure your prompt follows the [template structure](../blob/main/templates/example-prompt.md)
+            - [ ] Check that CI passes (linting, formatting)
+            - [ ] Add a description of what your prompt does
+
+            A maintainer will review your PR shortly. Thanks for helping make AI prompts better for everyone!
+
+            Happy contributing! ✨

@@ -1,0 +1,108 @@
+name: "🆕 New Prompt Submission"
+description: Submit a new prompt to the library
+title: "[Prompt]: "
+labels: ["new-prompt", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing a new prompt! Please fill out this form completely.
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Which category does this prompt belong to?
+      options:
+        - coding
+        - writing
+        - analysis
+        - creative
+        - research
+        - other
+    validations:
+      required: true
+
+  - type: input
+    id: prompt-name
+    attributes:
+      label: Prompt Name
+      description: A clear, descriptive name for your prompt
+      placeholder: "e.g., React Component Generator"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What does this prompt do? When should someone use it?
+      placeholder: "This prompt helps developers generate..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: prompt-content
+    attributes:
+      label: Prompt Content
+      description: The full prompt text. Use {{variable}} syntax for placeholders.
+      placeholder: |
+        You are a senior software architect...
+        
+        Given the following requirements: {{requirements}}
+        
+        Generate a solution that...
+    validations:
+      required: true
+
+  - type: textarea
+    id: variables
+    attributes:
+      label: Variables
+      description: List all variables and what they should be replaced with
+      placeholder: |
+        - `{{requirements}}`: The feature requirements or specifications
+        - `{{language}}`: Programming language (e.g., TypeScript, Python)
+    validations:
+      required: false
+
+  - type: textarea
+    id: example
+    attributes:
+      label: Example Usage
+      description: Show an example of the prompt filled in with real values
+      placeholder: "When used with requirements='Build a login form'..."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: tested
+    attributes:
+      label: Testing
+      description: Which models have you tested this prompt with?
+      options:
+        - label: Claude (Opus 4.5 / Sonnet)
+        - label: GPT-5.2
+        - label: Gemini 3 Pro
+        - label: Other (specify in notes)
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+      description: Any tips, model-specific recommendations, or known limitations
+      placeholder: "Works best when... / Avoid using with..."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Submission Checklist
+      options:
+        - label: I have read the [Contributing Guidelines](CONTRIBUTING.md)
+          required: true
+        - label: This prompt is original or properly attributed
+          required: true
+        - label: I have tested this prompt with at least one AI model
+          required: true

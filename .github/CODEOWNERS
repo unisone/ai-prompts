@@ -1,0 +1,28 @@
+# CODEOWNERS - https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+#
+# These owners will be automatically requested for review when someone opens a pull request.
+
+# Default owners for everything in the repo
+*                       @unisone
+
+# Prompt categories - specific reviewers can be added
+/coding/                @unisone
+/writing/               @unisone
+/analysis/              @unisone
+/creative/              @unisone
+/research/              @unisone
+/templates/             @unisone
+
+# GitHub configuration
+/.github/               @unisone
+
+# Documentation
+README.md               @unisone
+CONTRIBUTING.md         @unisone
+CODE_OF_CONDUCT.md      @unisone
+
+# Configuration files
+package.json            @unisone
+*.json                  @unisone
+*.yml                   @unisone
+*.yaml                  @unisone

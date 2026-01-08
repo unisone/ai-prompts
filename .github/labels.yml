@@ -1,0 +1,116 @@
+# GitHub Labels Configuration
+# Sync with: gh label sync --force
+# Or use: https://github.com/EndBug/label-sync
+
+# Type labels
+- name: "type: prompt"
+  color: "D97757"
+  description: "New prompt submission"
+
+- name: "type: bug"
+  color: "d73a4a"
+  description: "Something isn't working"
+
+- name: "type: feature"
+  color: "a2eeef"
+  description: "New feature or enhancement request"
+
+- name: "type: docs"
+  color: "0075ca"
+  description: "Documentation improvements"
+
+- name: "type: chore"
+  color: "fef2c0"
+  description: "Maintenance and tooling"
+
+# Category labels
+- name: "category: coding"
+  color: "7057ff"
+  description: "Related to coding/ prompts"
+
+- name: "category: writing"
+  color: "008672"
+  description: "Related to writing/ prompts"
+
+- name: "category: analysis"
+  color: "d876e3"
+  description: "Related to analysis/ prompts"
+
+- name: "category: creative"
+  color: "fbca04"
+  description: "Related to creative/ prompts"
+
+- name: "category: research"
+  color: "b60205"
+  description: "Related to research/ prompts"
+
+# Status labels
+- name: "status: needs review"
+  color: "fbca04"
+  description: "Awaiting review"
+
+- name: "status: in progress"
+  color: "0e8a16"
+  description: "Currently being worked on"
+
+- name: "status: blocked"
+  color: "b60205"
+  description: "Blocked by external dependency"
+
+# Priority labels
+- name: "priority: high"
+  color: "d93f0b"
+  description: "High priority"
+
+- name: "priority: medium"
+  color: "fbca04"
+  description: "Medium priority"
+
+- name: "priority: low"
+  color: "0e8a16"
+  description: "Low priority"
+
+# Special labels
+- name: "good first issue"
+  color: "7057ff"
+  description: "Good for newcomers"
+
+- name: "help wanted"
+  color: "008672"
+  description: "Extra attention is needed"
+
+- name: "duplicate"
+  color: "cfd3d7"
+  description: "This issue or pull request already exists"
+
+- name: "invalid"
+  color: "e4e669"
+  description: "This doesn't seem right"
+
+- name: "wontfix"
+  color: "ffffff"
+  description: "This will not be worked on"
+
+- name: "stale"
+  color: "ededed"
+  description: "Inactive issue/PR"
+
+- name: "dependencies"
+  color: "0366d6"
+  description: "Pull requests that update a dependency"
+
+- name: "automated"
+  color: "ededed"
+  description: "Automated by bots"
+
+- name: "github-actions"
+  color: "000000"
+  description: "Related to GitHub Actions"
+
+- name: "security"
+  color: "d73a4a"
+  description: "Security-related issue"
+
+- name: "pinned"
+  color: "006b75"
+  description: "Pinned and won't be auto-closed"

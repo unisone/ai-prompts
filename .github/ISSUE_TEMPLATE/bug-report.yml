@@ -1,0 +1,57 @@
+name: "🐛 Bug Report"
+description: Report an issue with an existing prompt
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve the library! Please describe the issue you found.
+
+  - type: input
+    id: prompt-file
+    attributes:
+      label: Prompt File
+      description: Which prompt file has the issue?
+      placeholder: "e.g., coding/ultrathink-code-craftsman.md"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue Type
+      options:
+        - Typo or grammatical error
+        - Incorrect information
+        - Prompt doesn't work as described
+        - Missing variables or examples
+        - Outdated content
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What's wrong? Be specific.
+      placeholder: "The prompt says X but it should say Y..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What should happen instead?
+    validations:
+      required: false
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested Fix
+      description: If you have a fix in mind, share it here
+    validations:
+      required: false
