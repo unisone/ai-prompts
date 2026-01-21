@@ -16,7 +16,14 @@
 
 <br/>
 
-[⚡ Quick Start](#-quick-start) • [📁 Categories](#-categories) • [➕ Contributing](#-adding-prompts) • [💡 Best Practices](#-prompt-engineering-tips)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-D97757?style=flat-square)](CONTRIBUTING.md)
+[![Issues](https://img.shields.io/github/issues/unisone/ai-prompts?style=flat-square&color=D97757)](https://github.com/unisone/ai-prompts/issues)
+[![Contributors](https://img.shields.io/github/contributors/unisone/ai-prompts?style=flat-square&color=D97757)](https://github.com/unisone/ai-prompts/graphs/contributors)
+[![Last Commit](https://img.shields.io/github/last-commit/unisone/ai-prompts?style=flat-square&color=565f89)](https://github.com/unisone/ai-prompts/commits/main)
+
+<br/>
+
+[⚡ Quick Start](#-quick-start) • [📁 Categories](#-categories) • [🤝 Contributing](#-contributing) • [💡 Best Practices](#-prompt-engineering-tips)
 
 </div>
 
@@ -141,21 +148,36 @@ A filled-in example showing the prompt in action.
 - Known limitations
 ```
 
-## ➕ Adding Prompts
+## 🤝 Contributing
+
+We welcome contributions from the community! Whether you're submitting a new prompt, improving an existing one, or fixing a typo — every contribution helps.
 
 ```
 ┌────────────────────────────────────────────────────────────────┐
-│  CONTRIBUTION WORKFLOW                                         │
-│  ════════════════════                                          │
+│  🚀 CONTRIBUTION WORKFLOW                                      │
+│  ════════════════════════                                      │
 │                                                                │
-│  ① Choose category    →  coding/ writing/ analysis/ etc.      │
-│  ② Create file        →  my-awesome-prompt.md                  │
-│  ③ Follow template    →  templates/example-prompt.md           │
+│  ① Fork & Clone       →  git clone your-fork                  │
+│  ② Create Branch      →  git checkout -b feat/my-prompt       │
+│  ③ Add Prompt         →  Follow templates/example-prompt.md   │
 │  ④ Test with AI       →  Verify with at least one model       │
-│  ⑤ Submit PR          →  Share with the community             │
+│  ⑤ Submit PR          →  Use our PR template                  │
+│                                                                │
+│  📖 Full guide: CONTRIBUTING.md                                │
+│  📋 Code of Conduct: CODE_OF_CONDUCT.md                        │
 │                                                                │
 └────────────────────────────────────────────────────────────────┘
 ```
+
+### Quick Links
+
+| Resource | Description |
+|----------|-------------|
+| [📖 Contributing Guide](CONTRIBUTING.md) | Detailed contribution instructions, style guide, and checklist |
+| [📋 Code of Conduct](CODE_OF_CONDUCT.md) | Community standards and expectations |
+| [🐛 Report a Bug](https://github.com/unisone/ai-prompts/issues/new?template=bug-report.yml) | Found an issue? Let us know |
+| [💡 Request Feature](https://github.com/unisone/ai-prompts/issues/new?template=feature-request.yml) | Suggest improvements |
+| [✨ Submit New Prompt](https://github.com/unisone/ai-prompts/issues/new?template=new-prompt.yml) | Share your prompt idea |
 
 ### Naming Convention
 
@@ -167,6 +189,16 @@ coding/react-component-generator.md
 writing/blog-post-outline.md
 analysis/sentiment-analyzer.md
 ```
+
+### First-Time Contributors
+
+New to open source? Here's how to get started:
+
+1. **Browse [open issues](https://github.com/unisone/ai-prompts/issues)** — look for `good first issue` labels
+2. **Read [CONTRIBUTING.md](CONTRIBUTING.md)** — understand our guidelines
+3. **Fork the repo** — click the Fork button at the top right
+4. **Make your changes** — follow the template structure
+5. **Open a PR** — we'll review it promptly!
 
 ## 💡 Prompt Engineering Tips
 
@@ -270,6 +302,16 @@ const systemPrompt = await fetch(
 
 <div align="center">
 
+## 🌟 Contributors
+
+Thanks to everyone who has contributed to this project!
+
+<a href="https://github.com/unisone/ai-prompts/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=unisone/ai-prompts" />
+</a>
+
+<br/><br/>
+
 ```
 ╭─────────────────────────────────────────────────────────╮
 │                                                         │
@@ -277,7 +319,7 @@ const systemPrompt = await fetch(
 │   github.com/unisone                                    │
 │                                                         │
 │   ⭐ Star this repo if you find it useful!             │
-│   🤝 Contributions welcome — open a PR or issue        │
+│   🤝 PRs welcome — check CONTRIBUTING.md               │
 │                                                         │
 ╰─────────────────────────────────────────────────────────╯
 ```
