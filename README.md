@@ -16,6 +16,7 @@
 
 <br/>
 
+[![CI](https://img.shields.io/github/actions/workflow/status/unisone/ai-prompts/ci.yml?style=flat-square&label=CI&logo=githubactions&logoColor=white)](https://github.com/unisone/ai-prompts/actions/workflows/ci.yml)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-D97757?style=flat-square)](CONTRIBUTING.md)
 [![Issues](https://img.shields.io/github/issues/unisone/ai-prompts?style=flat-square&color=D97757)](https://github.com/unisone/ai-prompts/issues)
 [![Contributors](https://img.shields.io/github/contributors/unisone/ai-prompts?style=flat-square&color=D97757)](https://github.com/unisone/ai-prompts/graphs/contributors)
@@ -23,7 +24,7 @@
 
 <br/>
 
-[⚡ Quick Start](#-quick-start) • [📁 Categories](#-categories) • [🤝 Contributing](#-contributing) • [💡 Best Practices](#-prompt-engineering-tips)
+[⚡ Quick Start](#-quick-start) • [📁 Categories](#-categories) • [🤝 Contributing](#-contributing) • [💡 Best Practices](#-prompt-engineering-tips) • [🛠️ Development](#%EF%B8%8F-development)
 
 </div>
 
@@ -175,6 +176,7 @@ We welcome contributions from the community! Whether you're submitting a new pro
 |----------|-------------|
 | [📖 Contributing Guide](CONTRIBUTING.md) | Detailed contribution instructions, style guide, and checklist |
 | [📋 Code of Conduct](CODE_OF_CONDUCT.md) | Community standards and expectations |
+| [🔒 Security Policy](.github/SECURITY.md) | How to report vulnerabilities |
 | [🐛 Report a Bug](https://github.com/unisone/ai-prompts/issues/new?template=bug-report.yml) | Found an issue? Let us know |
 | [💡 Request Feature](https://github.com/unisone/ai-prompts/issues/new?template=feature-request.yml) | Suggest improvements |
 | [✨ Submit New Prompt](https://github.com/unisone/ai-prompts/issues/new?template=new-prompt.yml) | Share your prompt idea |
@@ -199,6 +201,62 @@ New to open source? Here's how to get started:
 3. **Fork the repo** — click the Fork button at the top right
 4. **Make your changes** — follow the template structure
 5. **Open a PR** — we'll review it promptly!
+
+## 🛠️ Development
+
+This project uses modern 2026 tooling for quality assurance.
+
+### Tech Stack
+
+| Tool | Purpose |
+|------|---------|
+| [![pnpm](https://img.shields.io/badge/pnpm-9.x-F69220?style=flat-square&logo=pnpm&logoColor=white)](https://pnpm.io) | Fast, disk-efficient package manager |
+| [![Node](https://img.shields.io/badge/Node-22.x-339933?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org) | JavaScript runtime |
+| [![Prettier](https://img.shields.io/badge/Prettier-3.x-F7B93E?style=flat-square&logo=prettier&logoColor=black)](https://prettier.io) | Code formatting |
+| [![Markdownlint](https://img.shields.io/badge/Markdownlint-0.17-000000?style=flat-square&logo=markdown&logoColor=white)](https://github.com/DavidAnson/markdownlint) | Markdown linting |
+| [![Husky](https://img.shields.io/badge/Husky-9.x-000000?style=flat-square&logo=git&logoColor=white)](https://typicode.github.io/husky) | Git hooks |
+| [![Commitlint](https://img.shields.io/badge/Commitlint-19.x-000000?style=flat-square&logo=conventionalcommits&logoColor=white)](https://commitlint.js.org) | Commit message linting |
+
+### Local Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/unisone/ai-prompts.git
+cd ai-prompts
+
+# Install dependencies (requires pnpm)
+pnpm install
+
+# Run linters
+pnpm run lint          # Run all linters
+pnpm run lint:md       # Markdown only
+pnpm run lint:format   # Prettier check
+pnpm run lint:spell    # Spell check
+
+# Auto-fix issues
+pnpm run format        # Fix formatting
+pnpm run format:md     # Fix markdown
+```
+
+### CI/CD Pipeline
+
+Every PR automatically runs:
+- ✅ **Markdownlint** — Enforces consistent markdown style
+- ✅ **Prettier** — Checks formatting
+- ✅ **CSpell** — Catches spelling errors
+- ✅ **Lychee** — Validates all links
+- ✅ **Prompt Validation** — Ensures required sections exist
+
+### Automation
+
+| Workflow | Trigger | Purpose |
+|----------|---------|---------|
+| **CI** | Push/PR | Lint, format, validate |
+| **Release** | Tags | Generate changelog, create release |
+| **Stale** | Daily | Mark inactive issues/PRs |
+| **Welcome** | New issue/PR | Greet first-time contributors |
+| **Labels** | Manual/push | Sync GitHub labels |
+| **Dependabot** | Weekly | Update dependencies |
 
 ## 💡 Prompt Engineering Tips
 
@@ -285,19 +343,6 @@ const systemPrompt = await fetch(
 ).then(r => r.text());
 ```
 
-## 📊 Stats
-
-```
-╔════════════════════════════════════════╗
-║  📈 REPOSITORY STATS                   ║
-╠════════════════════════════════════════╣
-║  Total Prompts    │  Growing           ║
-║  Categories       │  6                 ║
-║  Last Updated     │  January 2026      ║
-║  Compatibility    │  Claude, GPT, Gem  ║
-╚════════════════════════════════════════╝
-```
-
 ---
 
 <div align="center">
@@ -313,15 +358,16 @@ Thanks to everyone who has contributed to this project!
 <br/><br/>
 
 ```
-╭─────────────────────────────────────────────────────────╮
-│                                                         │
-│   Built with 🧠 by Alex Zaytsev                        │
-│   github.com/unisone                                    │
-│                                                         │
-│   ⭐ Star this repo if you find it useful!             │
-│   🤝 PRs welcome — check CONTRIBUTING.md               │
-│                                                         │
-╰─────────────────────────────────────────────────────────╯
+╭─────────────────────────────────────────────────────────────────╮
+│                                                                 │
+│   Built with 🧠 by Alex Zaytsev                                │
+│   github.com/unisone                                            │
+│                                                                 │
+│   ⭐ Star this repo if you find it useful!                     │
+│   🤝 PRs welcome — check CONTRIBUTING.md                       │
+│   💖 Sponsor — github.com/sponsors/unisone                     │
+│                                                                 │
+╰─────────────────────────────────────────────────────────────────╯
 ```
 
 <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=14&duration=4000&pause=2000&color=565f89&center=true&vCenter=true&width=400&lines=prompt+%3E+think+%3E+ship+%3E+repeat" alt="Footer Animation" />
