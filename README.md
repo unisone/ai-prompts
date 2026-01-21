@@ -1,15 +1,53 @@
 <div align="center">
 
-# 🧠 AI Prompts Library
+```
+   ╔═══════════════════════════════════════════════════════════════════════════╗
+   ║                                                                           ║
+   ║    █████╗ ██╗    ██████╗ ██████╗  ██████╗ ███╗   ███╗██████╗ ████████╗   ║
+   ║   ██╔══██╗██║    ██╔══██╗██╔══██╗██╔═══██╗████╗ ████║██╔══██╗╚══██╔══╝   ║
+   ║   ███████║██║    ██████╔╝██████╔╝██║   ██║██╔████╔██║██████╔╝   ██║      ║
+   ║   ██╔══██║██║    ██╔═══╝ ██╔══██╗██║   ██║██║╚██╔╝██║██╔═══╝    ██║      ║
+   ║   ██║  ██║██║    ██║     ██║  ██║╚██████╔╝██║ ╚═╝ ██║██║        ██║      ║
+   ║   ╚═╝  ╚═╝╚═╝    ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚═╝        ╚═╝      ║
+   ║                                                                           ║
+   ║            ██╗     ██╗██████╗ ██████╗  █████╗ ██████╗ ██╗   ██╗           ║
+   ║            ██║     ██║██╔══██╗██╔══██╗██╔══██╗██╔══██╗╚██╗ ██╔╝           ║
+   ║            ██║     ██║██████╔╝██████╔╝███████║██████╔╝ ╚████╔╝            ║
+   ║            ██║     ██║██╔══██╗██╔══██╗██╔══██║██╔══██╗  ╚██╔╝             ║
+   ║            ███████╗██║██████╔╝██║  ██║██║  ██║██║  ██║   ██║              ║
+   ║            ╚══════╝╚═╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝              ║
+   ║                                                                           ║
+   ║                    ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄                        ║
+   ║                    █  Production-Ready AI Prompts  █                      ║
+   ║                    ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀                        ║
+   ║                                                                           ║
+   ╚═══════════════════════════════════════════════════════════════════════════╝
+```
 
-**A curated collection of production-ready prompts for modern AI assistants**
+<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=600&size=18&duration=3000&pause=1000&color=A855F7&center=true&vCenter=true&multiline=true&repeat=true&width=600&height=80&lines=%F0%9F%A7%A0+Curated+prompts+for+frontier+AI+models;%E2%9A%A1+Claude+Opus+4.5+%7C+GPT-4o+%7C+Gemini+2.0;%F0%9F%9A%80+Copy.+Paste.+Ship." alt="Typing Animation" />
 
-[![Claude](https://img.shields.io/badge/Claude-Opus%204.5-blueviolet?style=flat-square&logo=anthropic)](https://anthropic.com)
-[![GPT](https://img.shields.io/badge/GPT-4o-brightgreen?style=flat-square&logo=openai)](https://openai.com)
-[![Gemini](https://img.shields.io/badge/Gemini-2.0-blue?style=flat-square&logo=google)](https://deepmind.google)
-[![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
+<br/>
 
-[Quick Start](#-quick-start) • [Categories](#-categories) • [Contributing](#-adding-prompts) • [Best Practices](#-prompt-engineering-tips)
+[![Claude](https://img.shields.io/badge/Claude-Opus%204.5-blueviolet?style=for-the-badge&logo=anthropic)](https://anthropic.com)
+[![GPT](https://img.shields.io/badge/GPT-4o-brightgreen?style=for-the-badge&logo=openai)](https://openai.com)
+[![Gemini](https://img.shields.io/badge/Gemini-2.0-blue?style=for-the-badge&logo=google)](https://deepmind.google)
+[![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
+
+<br/>
+
+[⚡ Quick Start](#-quick-start) • [📁 Categories](#-categories) • [➕ Contributing](#-adding-prompts) • [💡 Best Practices](#-prompt-engineering-tips)
+
+<br/>
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│  > prompt --load ultrathink-code-craftsman.md               │
+│  ✓ Loaded: Ultrathink Code Craftsman                        │
+│  ✓ Model: claude-opus-4-5                                   │
+│  ✓ Mode: Extended Thinking                                  │
+│  > Ready to craft elegant solutions_                        │
+└──────────────────────────────────────────────────────────────┘
+```
 
 </div>
 
@@ -19,6 +57,29 @@
 
 Battle-tested prompts optimized for **Claude Code**, **Claude Opus 4.5**, **GPT-4o**, and other frontier models. Each prompt follows a consistent template with variables, examples, and usage notes.
 
+```
+  ┌─────────────────────────────────────────────────────────────────┐
+  │                                                                 │
+  │   📦 PROMPT ANATOMY                                             │
+  │   ─────────────────                                             │
+  │                                                                 │
+  │   ┌───────────────┐                                             │
+  │   │  # Title      │ ← What it's called                          │
+  │   ├───────────────┤                                             │
+  │   │  Description  │ ← What it does                              │
+  │   ├───────────────┤                                             │
+  │   │  Prompt       │ ← The actual prompt text                    │
+  │   ├───────────────┤                                             │
+  │   │  {{vars}}     │ ← Customizable placeholders                 │
+  │   ├───────────────┤                                             │
+  │   │  Examples     │ ← Real usage samples                        │
+  │   ├───────────────┤                                             │
+  │   │  Notes        │ ← Tips & model recommendations              │
+  │   └───────────────┘                                             │
+  │                                                                 │
+  └─────────────────────────────────────────────────────────────────┘
+```
+
 ## 🚀 Quick Start
 
 ```bash
@@ -26,12 +87,31 @@ Battle-tested prompts optimized for **Claude Code**, **Claude Opus 4.5**, **GPT-
 git clone https://github.com/unisone/ai-prompts.git
 
 # Browse prompts by category
-cd ai-prompts/coding
+cd ai-prompts && ls -la coding/
 ```
 
 **Or** just copy any prompt directly from GitHub into your AI assistant of choice.
 
 ## 📁 Categories
+
+```
+ai-prompts/
+│
+├── 💻 coding/        # Code review, debugging, architecture, system prompts
+│   ├── ultrathink-code-craftsman.md
+│   └── structured-reasoning-planner.md
+│
+├── ✍️  writing/       # Blog posts, documentation, copywriting, editing
+│
+├── 📊 analysis/      # Data analysis, summarization, insights extraction
+│
+├── 🎨 creative/      # Creative writing, brainstorming, problem-solving
+│
+├── 🔬 research/      # Fact-checking, literature review, competitive analysis
+│
+└── 📋 templates/     # Base templates for creating new prompts
+    └── example-prompt.md
+```
 
 | Folder | Description | Use Cases |
 |--------|-------------|-----------|
@@ -44,14 +124,32 @@ cd ai-prompts/coding
 
 ## 🎯 Featured Prompts
 
-| Prompt | Category | Description |
-|--------|----------|-------------|
-| [Ultrathink Code Craftsman](./coding/ultrathink-code-craftsman.md) | Coding | Philosophy-driven prompt for elegant software craftsmanship |
-| [Structured Reasoning Planner](./coding/structured-reasoning-planner.md) | Coding | Methodical reasoning with logical dependencies & risk assessment |
+<table>
+<tr>
+<td width="50%">
 
-## 📝 Prompt Format
+### 🧙‍♂️ Ultrathink Code Craftsman
+**Category:** `coding/`
 
-Every prompt follows this standardized structure:
+Philosophy-driven prompt that transforms AI from code generator to software craftsman. Think different. Obsess over details. Craft, don't code.
+
+[→ View Prompt](./coding/ultrathink-code-craftsman.md)
+
+</td>
+<td width="50%">
+
+### 🧠 Structured Reasoning Planner
+**Category:** `coding/`
+
+Methodical reasoning with 9-step framework: logical dependencies, risk assessment, abductive reasoning, and persistent problem-solving.
+
+[→ View Prompt](./coding/structured-reasoning-planner.md)
+
+</td>
+</tr>
+</table>
+
+## 📝 Prompt Template
 
 ```markdown
 # Prompt Name
@@ -76,14 +174,23 @@ A filled-in example showing the prompt in action.
 
 ## ➕ Adding Prompts
 
-1. **Choose a category** — Pick the folder that best fits your prompt
-2. **Create the file** — Use kebab-case naming: `my-awesome-prompt.md`
-3. **Follow the template** — Copy from [`templates/example-prompt.md`](./templates/example-prompt.md)
-4. **Test it** — Verify with at least one AI model before committing
+```
+┌────────────────────────────────────────────────────────────────┐
+│  CONTRIBUTION WORKFLOW                                         │
+│  ════════════════════                                          │
+│                                                                │
+│  ① Choose category    →  coding/ writing/ analysis/ etc.      │
+│  ② Create file        →  my-awesome-prompt.md                  │
+│  ③ Follow template    →  templates/example-prompt.md           │
+│  ④ Test with AI       →  Verify with at least one model       │
+│  ⑤ Submit PR          →  Share with the community             │
+│                                                                │
+└────────────────────────────────────────────────────────────────┘
+```
 
 ### Naming Convention
 
-```
+```bash
 <descriptive-name>.md
 
 # Examples:
@@ -179,16 +286,33 @@ const systemPrompt = await fetch(
 
 ## 📊 Stats
 
-- **Total Prompts**: Growing collection
-- **Categories**: 6
-- **Last Updated**: January 2026
+```
+╔════════════════════════════════════════╗
+║  📈 REPOSITORY STATS                   ║
+╠════════════════════════════════════════╣
+║  Total Prompts    │  Growing           ║
+║  Categories       │  6                 ║
+║  Last Updated     │  January 2026      ║
+║  Compatibility    │  Claude, GPT, Gem  ║
+╚════════════════════════════════════════╝
+```
 
 ---
 
 <div align="center">
 
-**Built with 🧠 by [Alex Zaytsev](https://github.com/unisone)**
+```
+╭─────────────────────────────────────────────────────────╮
+│                                                         │
+│   Built with 🧠 by Alex Zaytsev                        │
+│   github.com/unisone                                    │
+│                                                         │
+│   ⭐ Star this repo if you find it useful!             │
+│   🤝 Contributions welcome — open a PR or issue        │
+│                                                         │
+╰─────────────────────────────────────────────────────────╯
+```
 
-*Contributions welcome! Open a PR or issue.*
+<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=14&duration=4000&pause=2000&color=6B7280&center=true&vCenter=true&width=400&lines=prompt+%3E+think+%3E+ship+%3E+repeat" alt="Footer Animation" />
 
 </div>
