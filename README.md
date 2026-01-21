@@ -1,18 +1,18 @@
 <div align="center">
 
-<!-- Animated ASCII Art Header - CSS keyframe animations -->
+<!-- Animated ASCII Art Header - Claude Code brick style -->
 <img src="./assets/header-animated.svg" alt="AI Prompt Library" width="800"/>
 
 <br/>
 
-<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=600&size=18&duration=3000&pause=1000&color=A855F7&center=true&vCenter=true&multiline=true&repeat=true&width=600&height=80&lines=%F0%9F%A7%A0+Curated+prompts+for+frontier+AI+models;%E2%9A%A1+Claude+Opus+4.5+%7C+GPT-4o+%7C+Gemini+2.0;%F0%9F%9A%80+Copy.+Paste.+Ship." alt="Typing Animation" />
+<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=600&size=18&duration=3000&pause=1000&color=D97757&center=true&vCenter=true&multiline=true&repeat=true&width=600&height=80&lines=%F0%9F%A7%A0+Curated+prompts+for+frontier+AI+models;%E2%9A%A1+Claude+Opus+4.5+%7C+GPT-5.2+%7C+Gemini+3;%F0%9F%9A%80+Copy.+Paste.+Ship." alt="Typing Animation" />
 
 <br/>
 
-[![Claude](https://img.shields.io/badge/Claude-Opus%204.5-blueviolet?style=for-the-badge&logo=anthropic)](https://anthropic.com)
-[![GPT](https://img.shields.io/badge/GPT-4o-brightgreen?style=for-the-badge&logo=openai)](https://openai.com)
-[![Gemini](https://img.shields.io/badge/Gemini-2.0-blue?style=for-the-badge&logo=google)](https://deepmind.google)
-[![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
+[![Claude](https://img.shields.io/badge/Claude-Opus%204.5-D97757?style=for-the-badge&logo=anthropic)](https://anthropic.com)
+[![GPT](https://img.shields.io/badge/GPT-5.2-10a37f?style=for-the-badge&logo=openai)](https://openai.com)
+[![Gemini](https://img.shields.io/badge/Gemini-3%20Pro-4285f4?style=for-the-badge&logo=google)](https://deepmind.google)
+[![License](https://img.shields.io/badge/License-MIT-gray?style=for-the-badge)](LICENSE)
 
 <br/>
 
@@ -24,7 +24,7 @@
 
 ## ✨ What's Inside
 
-Battle-tested prompts optimized for **Claude Code**, **Claude Opus 4.5**, **GPT-4o**, and other frontier models. Each prompt follows a consistent template with variables, examples, and usage notes.
+Battle-tested prompts optimized for **Claude Code**, **Claude Opus 4.5**, **GPT-5.2**, and other frontier models. Each prompt follows a consistent template with variables, examples, and usage notes.
 
 ```
   ┌─────────────────────────────────────────────────────────────────┐
@@ -97,7 +97,7 @@ ai-prompts/
 <tr>
 <td width="50%">
 
-### 🧙‍♂️ Ultrathink Code Craftsman
+### 🧙‍♂️ Code Craftsman
 **Category:** `coding/`
 
 Philosophy-driven prompt that transforms AI from code generator to software craftsman. Think different. Obsess over details. Craft, don't code.
@@ -228,10 +228,10 @@ Now analyze: {{user_input}}
 
 | Model | Optimization |
 |-------|--------------|
-| **Claude Opus 4.5** | Leverage extended thinking with `<thinking>` tags, use artifacts for code |
-| **Claude Code** | Reference `CLAUDE.md` for project context, use TodoWrite for complex tasks |
-| **GPT-4o** | Use system messages effectively, structured outputs with JSON mode |
-| **Gemini 2.0** | Multimodal inputs work great, leverage grounding with Google Search |
+| **Claude Opus 4.5** | Use extended thinking for complex tasks, leverage artifacts for code output |
+| **Claude Code** | Reference `CLAUDE.md` for project context, use TodoWrite for task tracking |
+| **GPT-5.2** | Use structured outputs with JSON mode, leverage GPT-5.2 Thinking for long-context |
+| **Gemini 3 Pro** | Excellent for multimodal inputs, use grounding with Google Search |
 
 </details>
 
@@ -282,6 +282,6 @@ const systemPrompt = await fetch(
 ╰─────────────────────────────────────────────────────────╯
 ```
 
-<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=14&duration=4000&pause=2000&color=6B7280&center=true&vCenter=true&width=400&lines=prompt+%3E+think+%3E+ship+%3E+repeat" alt="Footer Animation" />
+<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=14&duration=4000&pause=2000&color=565f89&center=true&vCenter=true&width=400&lines=prompt+%3E+think+%3E+ship+%3E+repeat" alt="Footer Animation" />
 
 </div>
