@@ -1,0 +1,140 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  lint:
+    name: Lint & Validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run Markdownlint
+        run: pnpm run lint:md
+
+      - name: Run Prettier check
+        run: pnpm run lint:format
+
+      - name: Run spell check
+        run: pnpm run lint:spell
+        continue-on-error: true
+
+  links:
+    name: Check Links
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --verbose
+            --no-progress
+            --accept 200,204,206,301,302,307,308,429
+            --exclude-mail
+            --exclude 'linkedin\.com'
+            --exclude 'x\.com'
+            --exclude 'twitter\.com'
+            --max-retries 3
+            --timeout 30
+            '**/*.md'
+          fail: false
+
+  validate-prompts:
+    name: Validate Prompt Structure
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check prompt files have required sections
+        run: |
+          echo "Validating prompt structure..."
+          
+          for file in $(find . -path ./node_modules -prune -o -name "*.md" -print | grep -E "^\./(coding|writing|analysis|creative|research)/" ); do
+            echo "Checking: $file"
+            
+            # Check for required sections (case-insensitive)
+            if ! grep -qi "^## Description\|^## Prompt\|^# " "$file"; then
+              echo "⚠️  Warning: $file may be missing required sections"
+            fi
+          done
+          
+          echo "✅ Prompt validation complete"
+
+  pr-comment:
+    name: PR Summary
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    needs: [lint, links]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate PR summary
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data: files } = await github.rest.pulls.listFiles({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.issue.number,
+            });
+            
+            const promptFiles = files.filter(f => 
+              f.filename.endsWith('.md') && 
+              !f.filename.startsWith('.github') &&
+              !['README.md', 'CONTRIBUTING.md', 'CODE_OF_CONDUCT.md', 'CHANGELOG.md'].includes(f.filename)
+            );
+            
+            if (promptFiles.length > 0) {
+              const summary = promptFiles.map(f => `- \`${f.filename}\` (${f.status})`).join('\n');
+              
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: `## 📋 Prompt Files Changed\n\n${summary}\n\n---\n_Please ensure all prompts follow the [template structure](./templates/example-prompt.md)._`
+              });
+            }
