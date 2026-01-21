@@ -1,175 +1,283 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="380" viewBox="0 0 800 380">
   <defs>
-    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#a855f7">
-        <animate attributeName="stop-color" values="#a855f7;#6366f1;#ec4899;#a855f7" dur="4s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="50%" style="stop-color:#6366f1">
-        <animate attributeName="stop-color" values="#6366f1;#ec4899;#a855f7;#6366f1" dur="4s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="100%" style="stop-color:#ec4899">
-        <animate attributeName="stop-color" values="#ec4899;#a855f7;#6366f1;#ec4899" dur="4s" repeatCount="indefinite"/>
-      </stop>
+    <!-- Claude brand gradient: warm terracotta/coral tones -->
+    <linearGradient id="claudeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#D97757"/>
+      <stop offset="50%" style="stop-color:#E07A5F"/>
+      <stop offset="100%" style="stop-color:#D97757"/>
     </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+    
+    <!-- Subtle glow filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
       <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    <filter id="glow-strong">
-      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
   </defs>
   
   <style>
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
     @keyframes pulse {
-      0%, 100% { opacity: 1; }
+      0%, 100% { opacity: 0.4; }
       50% { opacity: 0.7; }
-    }
-    @keyframes slideIn {
-      0% { transform: translateX(-10px); opacity: 0; }
-      100% { transform: translateX(0); opacity: 1; }
-    }
-    @keyframes flicker {
-      0%, 100% { opacity: 1; }
-      92% { opacity: 1; }
-      93% { opacity: 0.8; }
-      94% { opacity: 1; }
-      96% { opacity: 0.9; }
-      97% { opacity: 1; }
-    }
-    @keyframes typing {
-      0% { width: 0; }
-      100% { width: 100%; }
     }
     @keyframes blink {
       0%, 100% { opacity: 1; }
       50% { opacity: 0; }
     }
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-5px); }
-    }
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    .ascii-art {
-      animation: pulse 3s ease-in-out infinite, flicker 8s linear infinite;
-    }
-    .line-1 { animation: slideIn 0.5s ease-out 0.1s both; }
-    .line-2 { animation: slideIn 0.5s ease-out 0.2s both; }
-    .line-3 { animation: slideIn 0.5s ease-out 0.3s both; }
-    .line-4 { animation: slideIn 0.5s ease-out 0.4s both; }
-    .line-5 { animation: slideIn 0.5s ease-out 0.5s both; }
-    .line-6 { animation: slideIn 0.5s ease-out 0.6s both; }
-    .subtitle {
-      animation: float 4s ease-in-out infinite;
-    }
-    .cursor {
-      animation: blink 1s step-end infinite;
-    }
-    .terminal-line {
-      animation: slideIn 0.8s ease-out 1s both;
-    }
+    .brick { animation: fadeIn 0.8s ease-out both; }
+    .row-1 .brick { animation-delay: 0.05s; }
+    .row-2 .brick { animation-delay: 0.1s; }
+    .row-3 .brick { animation-delay: 0.15s; }
+    .row-4 .brick { animation-delay: 0.2s; }
+    .row-5 .brick { animation-delay: 0.25s; }
+    .corner { animation: pulse 3s ease-in-out infinite; }
+    .cursor { animation: blink 1s step-end infinite; }
   </style>
   
   <!-- Background -->
-  <rect width="800" height="400" fill="#0d1117"/>
+  <rect width="800" height="380" fill="#1a1b26"/>
   
-  <!-- Border glow effect -->
-  <rect x="10" y="10" width="780" height="380" rx="8" ry="8" fill="none" stroke="url(#gradient1)" stroke-width="2" filter="url(#glow)">
-    <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
-  </rect>
+  <!-- Border -->
+  <rect x="8" y="8" width="784" height="364" rx="8" fill="none" stroke="#D97757" stroke-width="1.5" stroke-opacity="0.6"/>
   
-  <!-- Inner border -->
-  <rect x="15" y="15" width="770" height="370" rx="6" ry="6" fill="none" stroke="#30363d" stroke-width="1"/>
-  
-  <!-- ASCII Art: AI PROMPT -->
-  <g class="ascii-art" filter="url(#glow)">
-    <text x="400" y="70" text-anchor="middle" font-family="monospace" font-size="11" fill="url(#gradient1)" class="line-1">
-      █████╗ ██╗    ██████╗ ██████╗  ██████╗ ███╗   ███╗██████╗ ████████╗
-    </text>
-    <text x="400" y="85" text-anchor="middle" font-family="monospace" font-size="11" fill="url(#gradient1)" class="line-2">
-      ██╔══██╗██║    ██╔══██╗██╔══██╗██╔═══██╗████╗ ████║██╔══██╗╚══██╔══╝
-    </text>
-    <text x="400" y="100" text-anchor="middle" font-family="monospace" font-size="11" fill="url(#gradient1)" class="line-3">
-      ███████║██║    ██████╔╝██████╔╝██║   ██║██╔████╔██║██████╔╝   ██║
-    </text>
-    <text x="400" y="115" text-anchor="middle" font-family="monospace" font-size="11" fill="url(#gradient1)" class="line-4">
-      ██╔══██║██║    ██╔═══╝ ██╔══██╗██║   ██║██║╚██╔╝██║██╔═══╝    ██║
-    </text>
-    <text x="400" y="130" text-anchor="middle" font-family="monospace" font-size="11" fill="url(#gradient1)" class="line-5">
-      ██║  ██║██║    ██║     ██║  ██║╚██████╔╝██║ ╚═╝ ██║██║        ██║
-    </text>
-    <text x="400" y="145" text-anchor="middle" font-family="monospace" font-size="11" fill="url(#gradient1)" class="line-6">
-      ╚═╝  ╚═╝╚═╝    ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚═╝        ╚═╝
-    </text>
+  <!-- Corner dots -->
+  <circle cx="24" cy="24" r="4" fill="#D97757" class="corner"/>
+  <circle cx="776" cy="24" r="4" fill="#D97757" class="corner" style="animation-delay: 0.75s"/>
+  <circle cx="24" cy="356" r="4" fill="#D97757" class="corner" style="animation-delay: 1.5s"/>
+  <circle cx="776" cy="356" r="4" fill="#D97757" class="corner" style="animation-delay: 2.25s"/>
+
+  <!-- AI PROMPT - Row 1 -->
+  <g class="row-1" filter="url(#glow)">
+    <!-- A -->
+    <rect x="120" y="50" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="130" y="50" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="110" y="60" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="140" y="60" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="110" y="70" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="120" y="70" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="130" y="70" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="140" y="70" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="110" y="80" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="140" y="80" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="110" y="90" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="140" y="90" width="8" height="8" fill="#D97757" class="brick"/>
+    
+    <!-- I -->
+    <rect x="165" y="50" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="175" y="50" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="185" y="50" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="175" y="60" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="175" y="70" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="175" y="80" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="165" y="90" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="175" y="90" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="185" y="90" width="8" height="8" fill="#D97757" class="brick"/>
+
+    <!-- P -->
+    <rect x="230" y="50" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="240" y="50" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="250" y="50" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="230" y="60" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="260" y="60" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="230" y="70" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="240" y="70" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="250" y="70" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="230" y="80" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="230" y="90" width="8" height="8" fill="#E07A5F" class="brick"/>
+    
+    <!-- R -->
+    <rect x="285" y="50" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="295" y="50" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="305" y="50" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="285" y="60" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="315" y="60" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="285" y="70" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="295" y="70" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="305" y="70" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="285" y="80" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="305" y="80" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="285" y="90" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="315" y="90" width="8" height="8" fill="#E07A5F" class="brick"/>
+    
+    <!-- O -->
+    <rect x="345" y="50" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="355" y="50" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="335" y="60" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="365" y="60" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="335" y="70" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="365" y="70" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="335" y="80" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="365" y="80" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="345" y="90" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="355" y="90" width="8" height="8" fill="#E07A5F" class="brick"/>
+    
+    <!-- M -->
+    <rect x="390" y="50" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="430" y="50" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="390" y="60" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="400" y="60" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="420" y="60" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="430" y="60" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="390" y="70" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="410" y="70" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="430" y="70" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="390" y="80" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="430" y="80" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="390" y="90" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="430" y="90" width="8" height="8" fill="#E8A87C" class="brick"/>
+    
+    <!-- P -->
+    <rect x="455" y="50" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="465" y="50" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="475" y="50" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="455" y="60" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="485" y="60" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="455" y="70" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="465" y="70" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="475" y="70" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="455" y="80" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="455" y="90" width="8" height="8" fill="#E8A87C" class="brick"/>
+    
+    <!-- T -->
+    <rect x="510" y="50" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="520" y="50" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="530" y="50" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="540" y="50" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="550" y="50" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="530" y="60" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="530" y="70" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="530" y="80" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="530" y="90" width="8" height="8" fill="#E8A87C" class="brick"/>
+    
+    <!-- S -->
+    <rect x="580" y="50" width="8" height="8" fill="#F0B89A" class="brick"/>
+    <rect x="590" y="50" width="8" height="8" fill="#F0B89A" class="brick"/>
+    <rect x="600" y="50" width="8" height="8" fill="#F0B89A" class="brick"/>
+    <rect x="570" y="60" width="8" height="8" fill="#F0B89A" class="brick"/>
+    <rect x="580" y="70" width="8" height="8" fill="#F0B89A" class="brick"/>
+    <rect x="590" y="70" width="8" height="8" fill="#F0B89A" class="brick"/>
+    <rect x="600" y="80" width="8" height="8" fill="#F0B89A" class="brick"/>
+    <rect x="570" y="90" width="8" height="8" fill="#F0B89A" class="brick"/>
+    <rect x="580" y="90" width="8" height="8" fill="#F0B89A" class="brick"/>
+    <rect x="590" y="90" width="8" height="8" fill="#F0B89A" class="brick"/>
   </g>
   
-  <!-- ASCII Art: LIBRARY -->
-  <g class="ascii-art" filter="url(#glow)">
-    <text x="400" y="175" text-anchor="middle" font-family="monospace" font-size="11" fill="url(#gradient1)" class="line-1">
-      ██╗     ██╗██████╗ ██████╗  █████╗ ██████╗ ██╗   ██╗
-    </text>
-    <text x="400" y="190" text-anchor="middle" font-family="monospace" font-size="11" fill="url(#gradient1)" class="line-2">
-      ██║     ██║██╔══██╗██╔══██╗██╔══██╗██╔══██╗╚██╗ ██╔╝
-    </text>
-    <text x="400" y="205" text-anchor="middle" font-family="monospace" font-size="11" fill="url(#gradient1)" class="line-3">
-      ██║     ██║██████╔╝██████╔╝███████║██████╔╝ ╚████╔╝
-    </text>
-    <text x="400" y="220" text-anchor="middle" font-family="monospace" font-size="11" fill="url(#gradient1)" class="line-4">
-      ██║     ██║██╔══██╗██╔══██╗██╔══██║██╔══██╗  ╚██╔╝
-    </text>
-    <text x="400" y="235" text-anchor="middle" font-family="monospace" font-size="11" fill="url(#gradient1)" class="line-5">
-      ███████╗██║██████╔╝██║  ██║██║  ██║██║  ██║   ██║
-    </text>
-    <text x="400" y="250" text-anchor="middle" font-family="monospace" font-size="11" fill="url(#gradient1)" class="line-6">
-      ╚══════╝╚═╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝
-    </text>
+  <!-- LIBRARY - Row 2 -->
+  <g class="row-2" filter="url(#glow)">
+    <!-- L -->
+    <rect x="230" y="130" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="230" y="140" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="230" y="150" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="230" y="160" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="230" y="170" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="240" y="170" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="250" y="170" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="260" y="170" width="8" height="8" fill="#D97757" class="brick"/>
+    
+    <!-- I -->
+    <rect x="285" y="130" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="295" y="130" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="305" y="130" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="295" y="140" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="295" y="150" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="295" y="160" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="285" y="170" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="295" y="170" width="8" height="8" fill="#D97757" class="brick"/>
+    <rect x="305" y="170" width="8" height="8" fill="#D97757" class="brick"/>
+    
+    <!-- B -->
+    <rect x="330" y="130" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="340" y="130" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="350" y="130" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="330" y="140" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="360" y="140" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="330" y="150" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="340" y="150" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="350" y="150" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="330" y="160" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="360" y="160" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="330" y="170" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="340" y="170" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="350" y="170" width="8" height="8" fill="#E07A5F" class="brick"/>
+    
+    <!-- R -->
+    <rect x="385" y="130" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="395" y="130" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="405" y="130" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="385" y="140" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="415" y="140" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="385" y="150" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="395" y="150" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="405" y="150" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="385" y="160" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="405" y="160" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="385" y="170" width="8" height="8" fill="#E07A5F" class="brick"/>
+    <rect x="415" y="170" width="8" height="8" fill="#E07A5F" class="brick"/>
+    
+    <!-- A -->
+    <rect x="445" y="130" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="455" y="130" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="435" y="140" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="465" y="140" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="435" y="150" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="445" y="150" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="455" y="150" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="465" y="150" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="435" y="160" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="465" y="160" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="435" y="170" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="465" y="170" width="8" height="8" fill="#E8A87C" class="brick"/>
+    
+    <!-- R -->
+    <rect x="490" y="130" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="500" y="130" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="510" y="130" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="490" y="140" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="520" y="140" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="490" y="150" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="500" y="150" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="510" y="150" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="490" y="160" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="510" y="160" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="490" y="170" width="8" height="8" fill="#E8A87C" class="brick"/>
+    <rect x="520" y="170" width="8" height="8" fill="#E8A87C" class="brick"/>
+    
+    <!-- Y -->
+    <rect x="545" y="130" width="8" height="8" fill="#F0B89A" class="brick"/>
+    <rect x="575" y="130" width="8" height="8" fill="#F0B89A" class="brick"/>
+    <rect x="555" y="140" width="8" height="8" fill="#F0B89A" class="brick"/>
+    <rect x="565" y="140" width="8" height="8" fill="#F0B89A" class="brick"/>
+    <rect x="560" y="150" width="8" height="8" fill="#F0B89A" class="brick"/>
+    <rect x="560" y="160" width="8" height="8" fill="#F0B89A" class="brick"/>
+    <rect x="560" y="170" width="8" height="8" fill="#F0B89A" class="brick"/>
   </g>
   
   <!-- Subtitle box -->
-  <g class="subtitle">
-    <rect x="250" y="270" width="300" height="30" rx="4" ry="4" fill="#161b22" stroke="#30363d"/>
-    <text x="400" y="290" text-anchor="middle" font-family="monospace" font-size="12" fill="#8b949e">
-      ⚡ Production-Ready AI Prompts ⚡
-    </text>
-  </g>
+  <rect x="250" y="210" width="300" height="32" rx="4" fill="#24283b" stroke="#414868" stroke-width="1"/>
+  <text x="400" y="231" text-anchor="middle" font-family="'SF Mono', 'Monaco', 'Inconsolata', monospace" font-size="13" fill="#a9b1d6">
+    ⚡ Production-Ready AI Prompts
+  </text>
   
-  <!-- Terminal prompt -->
-  <g class="terminal-line">
-    <rect x="150" y="315" width="500" height="50" rx="6" ry="6" fill="#161b22" stroke="#30363d"/>
-    <text x="170" y="337" font-family="monospace" font-size="11" fill="#7ee787">❯</text>
-    <text x="185" y="337" font-family="monospace" font-size="11" fill="#c9d1d9">prompt --load</text>
-    <text x="295" y="337" font-family="monospace" font-size="11" fill="#a855f7">claude-opus-4.5</text>
-    <text x="420" y="337" font-family="monospace" font-size="11" fill="#c9d1d9">--mode</text>
-    <text x="470" y="337" font-family="monospace" font-size="11" fill="#79c0ff">ultrathink</text>
-    <text x="550" y="337" font-family="monospace" font-size="11" fill="#c9d1d9" class="cursor">█</text>
-    <text x="170" y="355" font-family="monospace" font-size="10" fill="#7ee787">✓</text>
-    <text x="185" y="355" font-family="monospace" font-size="10" fill="#8b949e">Ready to craft elegant solutions...</text>
-  </g>
+  <!-- Terminal box -->
+  <rect x="140" y="260" width="520" height="80" rx="6" fill="#1f2335" stroke="#414868" stroke-width="1"/>
   
-  <!-- Decorative corners -->
-  <g fill="url(#gradient1)" opacity="0.6">
-    <circle cx="30" cy="30" r="3">
-      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="770" cy="30" r="3">
-      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" begin="0.5s"/>
-    </circle>
-    <circle cx="30" cy="370" r="3">
-      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" begin="1s"/>
-    </circle>
-    <circle cx="770" cy="370" r="3">
-      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" begin="1.5s"/>
-    </circle>
-  </g>
+  <!-- Terminal header dots -->
+  <circle cx="160" cy="276" r="5" fill="#f7768e"/>
+  <circle cx="178" cy="276" r="5" fill="#e0af68"/>
+  <circle cx="196" cy="276" r="5" fill="#9ece6a"/>
+  
+  <!-- Terminal content -->
+  <text x="160" y="308" font-family="'SF Mono', 'Monaco', monospace" font-size="12" fill="#7aa2f7">❯</text>
+  <text x="178" y="308" font-family="'SF Mono', 'Monaco', monospace" font-size="12" fill="#c0caf5">claude prompts</text>
+  <text x="295" y="308" font-family="'SF Mono', 'Monaco', monospace" font-size="12" fill="#bb9af7">--list</text>
+  
+  <text x="160" y="328" font-family="'SF Mono', 'Monaco', monospace" font-size="11" fill="#9ece6a">✓</text>
+  <text x="178" y="328" font-family="'SF Mono', 'Monaco', monospace" font-size="11" fill="#565f89">Found 2 prompts in coding/</text>
+  <rect x="378" y="318" width="8" height="14" fill="#c0caf5" class="cursor"/>
 </svg>
