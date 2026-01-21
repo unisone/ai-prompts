@@ -1,26 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="380" viewBox="0 0 800 380">
-  <defs>
-    <!-- Claude brand gradient: warm terracotta/coral tones -->
-    <linearGradient id="claudeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#D97757"/>
-      <stop offset="50%" style="stop-color:#E07A5F"/>
-      <stop offset="100%" style="stop-color:#D97757"/>
-    </linearGradient>
-    
-    <!-- Subtle glow filter -->
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="2" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-  </defs>
-  
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420">
   <style>
     @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
+      0% { opacity: 0; transform: translateY(-5px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
     @keyframes pulse {
       0%, 100% { opacity: 0.4; }
@@ -30,254 +12,226 @@
       0%, 100% { opacity: 1; }
       50% { opacity: 0; }
     }
-    .brick { animation: fadeIn 0.8s ease-out both; }
-    .row-1 .brick { animation-delay: 0.05s; }
-    .row-2 .brick { animation-delay: 0.1s; }
-    .row-3 .brick { animation-delay: 0.15s; }
-    .row-4 .brick { animation-delay: 0.2s; }
-    .row-5 .brick { animation-delay: 0.25s; }
+    @keyframes glow {
+      0%, 100% { filter: drop-shadow(0 0 2px #D9775740); }
+      50% { filter: drop-shadow(0 0 6px #D9775780); }
+    }
+    .letter { animation: fadeIn 0.6s ease-out both; }
+    .letter-1 { animation-delay: 0.05s; }
+    .letter-2 { animation-delay: 0.1s; }
+    .letter-3 { animation-delay: 0.15s; }
+    .letter-4 { animation-delay: 0.2s; }
+    .letter-5 { animation-delay: 0.25s; }
+    .letter-6 { animation-delay: 0.3s; }
+    .letter-7 { animation-delay: 0.35s; }
+    .letter-8 { animation-delay: 0.4s; }
+    .letter-9 { animation-delay: 0.45s; }
+    .letter-10 { animation-delay: 0.5s; }
+    .letter-11 { animation-delay: 0.55s; }
+    .letter-12 { animation-delay: 0.6s; }
+    .letter-13 { animation-delay: 0.65s; }
+    .letter-14 { animation-delay: 0.7s; }
+    .letter-15 { animation-delay: 0.75s; }
+    .letter-16 { animation-delay: 0.8s; }
     .corner { animation: pulse 3s ease-in-out infinite; }
     .cursor { animation: blink 1s step-end infinite; }
+    .brick { rx: 2; ry: 2; }
+    .connector { fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
   </style>
   
   <!-- Background -->
-  <rect width="800" height="380" fill="#1a1b26"/>
+  <rect width="800" height="420" fill="#1a1b26"/>
   
   <!-- Border -->
-  <rect x="8" y="8" width="784" height="364" rx="8" fill="none" stroke="#D97757" stroke-width="1.5" stroke-opacity="0.6"/>
+  <rect x="12" y="12" width="776" height="396" rx="12" fill="none" stroke="#D97757" stroke-width="1.5" stroke-opacity="0.5"/>
   
   <!-- Corner dots -->
-  <circle cx="24" cy="24" r="4" fill="#D97757" class="corner"/>
-  <circle cx="776" cy="24" r="4" fill="#D97757" class="corner" style="animation-delay: 0.75s"/>
-  <circle cx="24" cy="356" r="4" fill="#D97757" class="corner" style="animation-delay: 1.5s"/>
-  <circle cx="776" cy="356" r="4" fill="#D97757" class="corner" style="animation-delay: 2.25s"/>
+  <circle cx="28" cy="28" r="5" fill="#D97757" class="corner"/>
+  <circle cx="772" cy="28" r="5" fill="#D97757" class="corner" style="animation-delay: 0.75s"/>
+  <circle cx="28" cy="392" r="5" fill="#D97757" class="corner" style="animation-delay: 1.5s"/>
+  <circle cx="772" cy="392" r="5" fill="#D97757" class="corner" style="animation-delay: 2.25s"/>
 
-  <!-- AI PROMPT - Row 1 -->
-  <g class="row-1" filter="url(#glow)">
-    <!-- A -->
-    <rect x="120" y="50" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="130" y="50" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="110" y="60" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="140" y="60" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="110" y="70" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="120" y="70" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="130" y="70" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="140" y="70" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="110" y="80" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="140" y="80" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="110" y="90" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="140" y="90" width="8" height="8" fill="#D97757" class="brick"/>
-    
-    <!-- I -->
-    <rect x="165" y="50" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="175" y="50" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="185" y="50" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="175" y="60" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="175" y="70" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="175" y="80" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="165" y="90" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="175" y="90" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="185" y="90" width="8" height="8" fill="#D97757" class="brick"/>
-
-    <!-- P -->
-    <rect x="230" y="50" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="240" y="50" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="250" y="50" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="230" y="60" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="260" y="60" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="230" y="70" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="240" y="70" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="250" y="70" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="230" y="80" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="230" y="90" width="8" height="8" fill="#E07A5F" class="brick"/>
-    
-    <!-- R -->
-    <rect x="285" y="50" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="295" y="50" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="305" y="50" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="285" y="60" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="315" y="60" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="285" y="70" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="295" y="70" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="305" y="70" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="285" y="80" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="305" y="80" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="285" y="90" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="315" y="90" width="8" height="8" fill="#E07A5F" class="brick"/>
-    
-    <!-- O -->
-    <rect x="345" y="50" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="355" y="50" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="335" y="60" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="365" y="60" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="335" y="70" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="365" y="70" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="335" y="80" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="365" y="80" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="345" y="90" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="355" y="90" width="8" height="8" fill="#E07A5F" class="brick"/>
-    
-    <!-- M -->
-    <rect x="390" y="50" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="430" y="50" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="390" y="60" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="400" y="60" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="420" y="60" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="430" y="60" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="390" y="70" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="410" y="70" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="430" y="70" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="390" y="80" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="430" y="80" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="390" y="90" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="430" y="90" width="8" height="8" fill="#E8A87C" class="brick"/>
-    
-    <!-- P -->
-    <rect x="455" y="50" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="465" y="50" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="475" y="50" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="455" y="60" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="485" y="60" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="455" y="70" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="465" y="70" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="475" y="70" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="455" y="80" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="455" y="90" width="8" height="8" fill="#E8A87C" class="brick"/>
-    
-    <!-- T -->
-    <rect x="510" y="50" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="520" y="50" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="530" y="50" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="540" y="50" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="550" y="50" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="530" y="60" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="530" y="70" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="530" y="80" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="530" y="90" width="8" height="8" fill="#E8A87C" class="brick"/>
-    
-    <!-- S -->
-    <rect x="580" y="50" width="8" height="8" fill="#F0B89A" class="brick"/>
-    <rect x="590" y="50" width="8" height="8" fill="#F0B89A" class="brick"/>
-    <rect x="600" y="50" width="8" height="8" fill="#F0B89A" class="brick"/>
-    <rect x="570" y="60" width="8" height="8" fill="#F0B89A" class="brick"/>
-    <rect x="580" y="70" width="8" height="8" fill="#F0B89A" class="brick"/>
-    <rect x="590" y="70" width="8" height="8" fill="#F0B89A" class="brick"/>
-    <rect x="600" y="80" width="8" height="8" fill="#F0B89A" class="brick"/>
-    <rect x="570" y="90" width="8" height="8" fill="#F0B89A" class="brick"/>
-    <rect x="580" y="90" width="8" height="8" fill="#F0B89A" class="brick"/>
-    <rect x="590" y="90" width="8" height="8" fill="#F0B89A" class="brick"/>
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- ROW 1: "AI PROMPTS" - Claude Code brick style with connectors   -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  
+  <!-- Letter A -->
+  <g class="letter letter-1">
+    <path class="connector" stroke="#D97757" stroke-opacity="0.4" d="M75,95 L75,60 L95,60 M75,80 L95,80"/>
+    <rect x="58" y="50" width="22" height="14" fill="#D97757" class="brick"/>
+    <rect x="50" y="64" width="14" height="32" fill="#D97757" class="brick"/>
+    <rect x="76" y="64" width="14" height="32" fill="#D97757" class="brick"/>
+    <rect x="58" y="78" width="22" height="10" fill="#D97757" class="brick"/>
   </g>
   
-  <!-- LIBRARY - Row 2 -->
-  <g class="row-2" filter="url(#glow)">
-    <!-- L -->
-    <rect x="230" y="130" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="230" y="140" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="230" y="150" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="230" y="160" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="230" y="170" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="240" y="170" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="250" y="170" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="260" y="170" width="8" height="8" fill="#D97757" class="brick"/>
-    
-    <!-- I -->
-    <rect x="285" y="130" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="295" y="130" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="305" y="130" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="295" y="140" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="295" y="150" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="295" y="160" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="285" y="170" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="295" y="170" width="8" height="8" fill="#D97757" class="brick"/>
-    <rect x="305" y="170" width="8" height="8" fill="#D97757" class="brick"/>
-    
-    <!-- B -->
-    <rect x="330" y="130" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="340" y="130" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="350" y="130" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="330" y="140" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="360" y="140" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="330" y="150" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="340" y="150" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="350" y="150" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="330" y="160" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="360" y="160" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="330" y="170" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="340" y="170" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="350" y="170" width="8" height="8" fill="#E07A5F" class="brick"/>
-    
-    <!-- R -->
-    <rect x="385" y="130" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="395" y="130" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="405" y="130" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="385" y="140" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="415" y="140" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="385" y="150" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="395" y="150" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="405" y="150" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="385" y="160" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="405" y="160" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="385" y="170" width="8" height="8" fill="#E07A5F" class="brick"/>
-    <rect x="415" y="170" width="8" height="8" fill="#E07A5F" class="brick"/>
-    
-    <!-- A -->
-    <rect x="445" y="130" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="455" y="130" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="435" y="140" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="465" y="140" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="435" y="150" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="445" y="150" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="455" y="150" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="465" y="150" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="435" y="160" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="465" y="160" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="435" y="170" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="465" y="170" width="8" height="8" fill="#E8A87C" class="brick"/>
-    
-    <!-- R -->
-    <rect x="490" y="130" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="500" y="130" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="510" y="130" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="490" y="140" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="520" y="140" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="490" y="150" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="500" y="150" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="510" y="150" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="490" y="160" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="510" y="160" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="490" y="170" width="8" height="8" fill="#E8A87C" class="brick"/>
-    <rect x="520" y="170" width="8" height="8" fill="#E8A87C" class="brick"/>
-    
-    <!-- Y -->
-    <rect x="545" y="130" width="8" height="8" fill="#F0B89A" class="brick"/>
-    <rect x="575" y="130" width="8" height="8" fill="#F0B89A" class="brick"/>
-    <rect x="555" y="140" width="8" height="8" fill="#F0B89A" class="brick"/>
-    <rect x="565" y="140" width="8" height="8" fill="#F0B89A" class="brick"/>
-    <rect x="560" y="150" width="8" height="8" fill="#F0B89A" class="brick"/>
-    <rect x="560" y="160" width="8" height="8" fill="#F0B89A" class="brick"/>
-    <rect x="560" y="170" width="8" height="8" fill="#F0B89A" class="brick"/>
+  <!-- Letter I -->
+  <g class="letter letter-2">
+    <path class="connector" stroke="#D97757" stroke-opacity="0.4" d="M115,60 L115,95"/>
+    <rect x="100" y="50" width="30" height="10" fill="#D97757" class="brick"/>
+    <rect x="108" y="60" width="14" height="26" fill="#D97757" class="brick"/>
+    <rect x="100" y="86" width="30" height="10" fill="#D97757" class="brick"/>
   </g>
   
-  <!-- Subtitle box -->
-  <rect x="250" y="210" width="300" height="32" rx="4" fill="#24283b" stroke="#414868" stroke-width="1"/>
-  <text x="400" y="231" text-anchor="middle" font-family="'SF Mono', 'Monaco', 'Inconsolata', monospace" font-size="13" fill="#a9b1d6">
+  <!-- Letter P -->
+  <g class="letter letter-3">
+    <path class="connector" stroke="#E07A5F" stroke-opacity="0.4" d="M175,55 L200,55 L200,75 M175,75 L190,75"/>
+    <rect x="160" y="50" width="14" height="46" fill="#E07A5F" class="brick"/>
+    <rect x="174" y="50" width="26" height="10" fill="#E07A5F" class="brick"/>
+    <rect x="190" y="60" width="14" height="18" fill="#E07A5F" class="brick"/>
+    <rect x="174" y="68" width="20" height="10" fill="#E07A5F" class="brick"/>
+  </g>
+  
+  <!-- Letter R -->
+  <g class="letter letter-4">
+    <path class="connector" stroke="#E07A5F" stroke-opacity="0.4" d="M235,55 L260,55 L260,75 M235,75 L250,75 L265,95"/>
+    <rect x="220" y="50" width="14" height="46" fill="#E07A5F" class="brick"/>
+    <rect x="234" y="50" width="26" height="10" fill="#E07A5F" class="brick"/>
+    <rect x="250" y="60" width="14" height="16" fill="#E07A5F" class="brick"/>
+    <rect x="234" y="66" width="20" height="10" fill="#E07A5F" class="brick"/>
+    <rect x="248" y="76" width="18" height="20" fill="#E07A5F" class="brick"/>
+  </g>
+  
+  <!-- Letter O -->
+  <g class="letter letter-5">
+    <path class="connector" stroke="#E07A5F" stroke-opacity="0.4" d="M295,55 L320,55 M280,70 L280,85 M335,70 L335,85 M295,95 L320,95"/>
+    <rect x="290" y="50" width="34" height="10" fill="#E07A5F" class="brick"/>
+    <rect x="278" y="58" width="14" height="30" fill="#E07A5F" class="brick"/>
+    <rect x="322" y="58" width="14" height="30" fill="#E07A5F" class="brick"/>
+    <rect x="290" y="86" width="34" height="10" fill="#E07A5F" class="brick"/>
+  </g>
+  
+  <!-- Letter M -->
+  <g class="letter letter-6">
+    <path class="connector" stroke="#E8A87C" stroke-opacity="0.4" d="M360,95 L360,55 L385,75 L410,55 L410,95"/>
+    <rect x="352" y="50" width="14" height="46" fill="#E8A87C" class="brick"/>
+    <rect x="364" y="56" width="16" height="14" fill="#E8A87C" class="brick"/>
+    <rect x="378" y="66" width="14" height="14" fill="#E8A87C" class="brick"/>
+    <rect x="390" y="56" width="16" height="14" fill="#E8A87C" class="brick"/>
+    <rect x="404" y="50" width="14" height="46" fill="#E8A87C" class="brick"/>
+  </g>
+  
+  <!-- Letter P -->
+  <g class="letter letter-7">
+    <path class="connector" stroke="#E8A87C" stroke-opacity="0.4" d="M445,55 L470,55 L470,75 M445,75 L460,75"/>
+    <rect x="430" y="50" width="14" height="46" fill="#E8A87C" class="brick"/>
+    <rect x="444" y="50" width="26" height="10" fill="#E8A87C" class="brick"/>
+    <rect x="460" y="60" width="14" height="18" fill="#E8A87C" class="brick"/>
+    <rect x="444" y="68" width="20" height="10" fill="#E8A87C" class="brick"/>
+  </g>
+  
+  <!-- Letter T -->
+  <g class="letter letter-8">
+    <path class="connector" stroke="#E8A87C" stroke-opacity="0.4" d="M510,60 L510,95"/>
+    <rect x="490" y="50" width="40" height="12" fill="#E8A87C" class="brick"/>
+    <rect x="503" y="62" width="14" height="34" fill="#E8A87C" class="brick"/>
+  </g>
+  
+  <!-- Letter S -->
+  <g class="letter letter-9">
+    <path class="connector" stroke="#F0B89A" stroke-opacity="0.4" d="M560,55 L585,55 M550,65 L550,72 M560,75 L575,75 M590,82 L590,90 M555,95 L580,95"/>
+    <rect x="555" y="50" width="34" height="10" fill="#F0B89A" class="brick"/>
+    <rect x="545" y="58" width="14" height="16" fill="#F0B89A" class="brick"/>
+    <rect x="555" y="72" width="26" height="10" fill="#F0B89A" class="brick"/>
+    <rect x="579" y="80" width="14" height="16" fill="#F0B89A" class="brick"/>
+    <rect x="549" y="86" width="34" height="10" fill="#F0B89A" class="brick"/>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- ROW 2: "LIBRARY" - Claude Code brick style with connectors      -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  
+  <!-- Letter L -->
+  <g class="letter letter-10">
+    <path class="connector" stroke="#D97757" stroke-opacity="0.4" d="M185,175 L185,135 M185,175 L220,175"/>
+    <rect x="178" y="125" width="14" height="46" fill="#D97757" class="brick"/>
+    <rect x="192" y="161" width="30" height="10" fill="#D97757" class="brick"/>
+  </g>
+  
+  <!-- Letter I -->
+  <g class="letter letter-11">
+    <path class="connector" stroke="#D97757" stroke-opacity="0.4" d="M255,135 L255,170"/>
+    <rect x="240" y="125" width="30" height="10" fill="#D97757" class="brick"/>
+    <rect x="248" y="135" width="14" height="26" fill="#D97757" class="brick"/>
+    <rect x="240" y="161" width="30" height="10" fill="#D97757" class="brick"/>
+  </g>
+  
+  <!-- Letter B -->
+  <g class="letter letter-12">
+    <path class="connector" stroke="#E07A5F" stroke-opacity="0.4" d="M300,130 L325,130 L325,145 M300,150 L320,150 L325,155 L325,170 M300,175 L325,175"/>
+    <rect x="290" y="125" width="14" height="46" fill="#E07A5F" class="brick"/>
+    <rect x="304" y="125" width="24" height="10" fill="#E07A5F" class="brick"/>
+    <rect x="318" y="135" width="14" height="14" fill="#E07A5F" class="brick"/>
+    <rect x="304" y="143" width="18" height="10" fill="#E07A5F" class="brick"/>
+    <rect x="318" y="153" width="14" height="14" fill="#E07A5F" class="brick"/>
+    <rect x="304" y="161" width="24" height="10" fill="#E07A5F" class="brick"/>
+  </g>
+  
+  <!-- Letter R -->
+  <g class="letter letter-13">
+    <path class="connector" stroke="#E07A5F" stroke-opacity="0.4" d="M365,130 L390,130 L390,150 M365,150 L380,150 L395,170"/>
+    <rect x="350" y="125" width="14" height="46" fill="#E07A5F" class="brick"/>
+    <rect x="364" y="125" width="26" height="10" fill="#E07A5F" class="brick"/>
+    <rect x="380" y="135" width="14" height="16" fill="#E07A5F" class="brick"/>
+    <rect x="364" y="141" width="20" height="10" fill="#E07A5F" class="brick"/>
+    <rect x="378" y="151" width="18" height="20" fill="#E07A5F" class="brick"/>
+  </g>
+  
+  <!-- Letter A -->
+  <g class="letter letter-14">
+    <path class="connector" stroke="#E8A87C" stroke-opacity="0.4" d="M430,170 L430,135 L450,135 M430,155 L450,155"/>
+    <rect x="423" y="125" width="22" height="14" fill="#E8A87C" class="brick"/>
+    <rect x="415" y="139" width="14" height="32" fill="#E8A87C" class="brick"/>
+    <rect x="441" y="139" width="14" height="32" fill="#E8A87C" class="brick"/>
+    <rect x="423" y="153" width="22" height="10" fill="#E8A87C" class="brick"/>
+  </g>
+  
+  <!-- Letter R -->
+  <g class="letter letter-15">
+    <path class="connector" stroke="#E8A87C" stroke-opacity="0.4" d="M490,130 L515,130 L515,150 M490,150 L505,150 L520,170"/>
+    <rect x="475" y="125" width="14" height="46" fill="#E8A87C" class="brick"/>
+    <rect x="489" y="125" width="26" height="10" fill="#E8A87C" class="brick"/>
+    <rect x="505" y="135" width="14" height="16" fill="#E8A87C" class="brick"/>
+    <rect x="489" y="141" width="20" height="10" fill="#E8A87C" class="brick"/>
+    <rect x="503" y="151" width="18" height="20" fill="#E8A87C" class="brick"/>
+  </g>
+  
+  <!-- Letter Y -->
+  <g class="letter letter-16">
+    <path class="connector" stroke="#F0B89A" stroke-opacity="0.4" d="M550,130 L565,150 L580,130 M565,150 L565,175"/>
+    <rect x="540" y="125" width="16" height="20" fill="#F0B89A" class="brick"/>
+    <rect x="574" y="125" width="16" height="20" fill="#F0B89A" class="brick"/>
+    <rect x="554" y="140" width="22" height="14" fill="#F0B89A" class="brick"/>
+    <rect x="558" y="154" width="14" height="17" fill="#F0B89A" class="brick"/>
+  </g>
+  
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- Subtitle box                                                     -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <rect x="250" y="205" width="300" height="36" rx="6" fill="none" stroke="#414868" stroke-width="1.5"/>
+  <text x="400" y="229" text-anchor="middle" font-family="'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace" font-size="14" fill="#a9b1d6">
     ⚡ Production-Ready AI Prompts
   </text>
   
-  <!-- Terminal box -->
-  <rect x="140" y="260" width="520" height="80" rx="6" fill="#1f2335" stroke="#414868" stroke-width="1"/>
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- Terminal window                                                  -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <rect x="140" y="260" width="520" height="100" rx="8" fill="#1f2335" stroke="#414868" stroke-width="1.5"/>
   
-  <!-- Terminal header dots -->
-  <circle cx="160" cy="276" r="5" fill="#f7768e"/>
-  <circle cx="178" cy="276" r="5" fill="#e0af68"/>
-  <circle cx="196" cy="276" r="5" fill="#9ece6a"/>
+  <!-- Terminal header bar -->
+  <rect x="140" y="260" width="520" height="28" rx="8" fill="#24283b"/>
+  <rect x="140" y="280" width="520" height="8" fill="#24283b"/>
+  
+  <!-- Terminal dots -->
+  <circle cx="162" cy="274" r="6" fill="#f7768e"/>
+  <circle cx="182" cy="274" r="6" fill="#e0af68"/>
+  <circle cx="202" cy="274" r="6" fill="#9ece6a"/>
   
   <!-- Terminal content -->
-  <text x="160" y="308" font-family="'SF Mono', 'Monaco', monospace" font-size="12" fill="#7aa2f7">❯</text>
-  <text x="178" y="308" font-family="'SF Mono', 'Monaco', monospace" font-size="12" fill="#c0caf5">claude prompts</text>
-  <text x="295" y="308" font-family="'SF Mono', 'Monaco', monospace" font-size="12" fill="#bb9af7">--list</text>
+  <text x="162" y="315" font-family="'SF Mono', 'Monaco', 'Fira Code', monospace" font-size="14" font-weight="500" fill="#7aa2f7">❯</text>
+  <text x="182" y="315" font-family="'SF Mono', 'Monaco', 'Fira Code', monospace" font-size="14" font-weight="600" fill="#c0caf5">claude prompts</text>
+  <text x="318" y="315" font-family="'SF Mono', 'Monaco', 'Fira Code', monospace" font-size="14" fill="#bb9af7">--list</text>
   
-  <text x="160" y="328" font-family="'SF Mono', 'Monaco', monospace" font-size="11" fill="#9ece6a">✓</text>
-  <text x="178" y="328" font-family="'SF Mono', 'Monaco', monospace" font-size="11" fill="#565f89">Found 2 prompts in coding/</text>
-  <rect x="378" y="318" width="8" height="14" fill="#c0caf5" class="cursor"/>
+  <text x="162" y="340" font-family="'SF Mono', 'Monaco', 'Fira Code', monospace" font-size="13" fill="#9ece6a">✓</text>
+  <text x="182" y="340" font-family="'SF Mono', 'Monaco', 'Fira Code', monospace" font-size="13" fill="#565f89">Found 2 prompts in coding/</text>
+  <rect x="398" y="328" width="10" height="16" rx="1" fill="#c0caf5" class="cursor"/>
 </svg>
