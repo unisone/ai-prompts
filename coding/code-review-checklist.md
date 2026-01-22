@@ -2,16 +2,19 @@
 
 ## Description
 
-A systematic code review prompt that catches bugs, security issues, and maintainability problems. Returns structured feedback with severity levels and specific line references.
+A systematic 10-point code review checklist covering logic errors, security vulnerabilities, performance issues, and edge cases. Use this to catch bugs before they reach production.
+
+## When to Use
+
+- Reviewing PRs before merge
+- Self-reviewing your own code before committing
+- Auditing existing code for issues
+- Training junior developers on what to look for
 
 ## Prompt
 
 ```
-Review this code using the checklist below. For each issue found, specify:
-- Severity: CRITICAL / HIGH / MEDIUM / LOW
-- Line number or range
-- What's wrong
-- How to fix it
+Review this code using the following checklist. For each category, identify specific issues with line numbers.
 
 ## Checklist
 
@@ -20,80 +23,110 @@ Review this code using the checklist below. For each issue found, specify:
 - [ ] Incorrect boolean logic (AND vs OR, negation errors)
 - [ ] Missing null/undefined checks before property access
 - [ ] Race conditions in async code
-- [ ] Incorrect error handling (swallowed errors, wrong catch blocks)
+- [ ] Incorrect comparison operators (== vs ===, < vs <=)
 
 ### 2. Security Vulnerabilities
 - [ ] SQL injection (string concatenation in queries)
 - [ ] XSS (unescaped user input in HTML)
-- [ ] Hardcoded secrets, API keys, or passwords
-- [ ] Missing authentication/authorization checks
-- [ ] Insecure data exposure in logs or error messages
-- [ ] CSRF vulnerabilities in state-changing operations
+- [ ] CSRF (missing tokens on state-changing requests)
+- [ ] Hardcoded secrets or credentials
+- [ ] Insecure direct object references
+- [ ] Missing input validation at boundaries
 
 ### 3. Performance Issues
-- [ ] N+1 queries (database calls in loops)
-- [ ] Missing pagination for large datasets
-- [ ] Unnecessary re-renders (React) or recomputation
-- [ ] Blocking operations that should be async
-- [ ] Memory leaks (unclosed connections, event listeners)
+- [ ] N+1 query patterns
+- [ ] Missing database indexes for frequent queries
+- [ ] Unnecessary re-renders in React components
+- [ ] Large objects in memory without cleanup
+- [ ] Synchronous operations that should be async
 
 ### 4. Error Handling
-- [ ] Empty catch blocks
-- [ ] Generic error messages that hide root cause
-- [ ] Missing try-catch around operations that can fail
-- [ ] Errors not propagated correctly to callers
+- [ ] Swallowed exceptions (empty catch blocks)
+- [ ] Generic error messages hiding useful info
+- [ ] Missing error boundaries in UI
+- [ ] Unhandled promise rejections
+- [ ] No retry logic for transient failures
 
-### 5. Code Quality
-- [ ] Functions longer than 30 lines
-- [ ] More than 3 levels of nesting
-- [ ] Magic numbers or strings (should be constants)
-- [ ] Duplicated code that should be extracted
-- [ ] Misleading variable or function names
+### 5. Edge Cases
+- [ ] Empty arrays/objects
+- [ ] Null/undefined inputs
+- [ ] Maximum/minimum values
+- [ ] Unicode and special characters
+- [ ] Timezone handling
 
-## Code to Review
+### 6. Code Quality
+- [ ] Functions doing too many things
+- [ ] Magic numbers without constants
+- [ ] Duplicated logic that should be extracted
+- [ ] Misleading variable/function names
+- [ ] Dead code that should be removed
 
-{{code}}
+### 7. API Contract
+- [ ] Breaking changes to public interfaces
+- [ ] Missing required fields in responses
+- [ ] Inconsistent error response format
+- [ ] Missing rate limiting
+- [ ] No versioning strategy
+
+### 8. Testing
+- [ ] Critical paths without tests
+- [ ] Tests that test implementation, not behavior
+- [ ] Missing edge case tests
+- [ ] Flaky tests that pass/fail randomly
+
+### 9. Documentation
+- [ ] Public APIs without JSDoc/docstrings
+- [ ] Complex logic without comments
+- [ ] Outdated README
+- [ ] Missing changelog entries
+
+### 10. Dependencies
+- [ ] Known vulnerable packages
+- [ ] Unnecessary dependencies
+- [ ] Missing lock file updates
+- [ ] Incompatible version constraints
 
 ## Output Format
 
-Return findings grouped by severity, then provide:
-1. Summary: X critical, Y high, Z medium, W low issues
-2. Recommendation: APPROVE / APPROVE WITH COMMENTS / REQUEST CHANGES / BLOCK
+For each issue found:
+- Category: [1-10]
+- Line: [number]
+- Issue: [description]
+- Fix: [suggested fix]
+- Severity: [critical/high/medium/low]
 ```
 
-## Variables
+## Why It Works
 
-- `{{code}}`: The code to review (paste the full file or diff)
+Systematic checklists reduce cognitive load and ensure consistent coverage. Research on code review effectiveness shows that structured approaches catch 60% more defects than ad-hoc reviews. The checklist externalizes the review criteria, preventing the "looks fine to me" problem.
 
-## Example Output
+## Example
 
+Input: A login endpoint implementation
+
+Output:
 ```
-## CRITICAL (1)
+Category: 2 (Security)
+Line: 47
+Issue: Password comparison using == instead of timing-safe comparison
+Fix: Use crypto.timingSafeEqual() to prevent timing attacks
+Severity: critical
 
-**SQL Injection** - Line 45
-```javascript
-const query = `SELECT * FROM users WHERE id = ${userId}`;
-```
-Fix: Use parameterized queries:
-```javascript
-const query = 'SELECT * FROM users WHERE id = $1';
-await db.query(query, [userId]);
-```
+Category: 4 (Error Handling)  
+Line: 62
+Issue: Generic "Login failed" message for all error types
+Fix: Log specific error server-side, return generic message to client
+Severity: medium
 
-## HIGH (2)
-
-**Missing null check** - Line 23
-...
-
----
-
-Summary: 1 critical, 2 high, 3 medium, 1 low
-Recommendation: REQUEST CHANGES (critical security issue must be fixed)
+Category: 8 (Testing)
+Line: N/A
+Issue: No test for rate limiting after failed attempts
+Fix: Add test verifying lockout after 5 failed attempts
+Severity: high
 ```
 
 ## Notes
 
-- Works with any programming language
-- Adjust checklist items based on your tech stack
-- For large PRs, review file-by-file
-- Combine with automated linting for best coverage
+- Adjust severity thresholds for your context (startup vs. regulated industry)
+- Not every review needs all 10 categories - prioritize based on the change
+- For large PRs, focus on critical paths first
