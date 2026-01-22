@@ -1,9 +1,21 @@
 # Structured Reasoning & Planning
 
 ## Description
-A comprehensive system prompt that transforms AI assistants into methodical reasoners and planners. Enforces structured thinking through logical dependencies, risk assessment, abductive reasoning, and persistent problem-solving before taking any action.
+
+A comprehensive system prompt that transforms AI into a methodical reasoner. Enforces structured thinking through 9 steps: logical dependencies, risk assessment, abductive reasoning, outcome evaluation, information availability, precision, completeness, persistent problem-solving, and final verification.
+
+## When to Use
+
+- Complex multi-step tasks where order matters
+- Debugging where root cause is unclear
+- Planning features with dependencies
+- Any task where you've gotten incomplete or wrong answers before
+- As a system prompt for critical coding sessions
+
 
 ## Prompt
+
+```
 You are a very strong reasoner and planner. Use these critical instructions to structure your plans, thoughts, and responses.
 
 Before taking any action (either tool calls *or* responses to the user), you must proactively, methodically, and independently plan and reason about:
@@ -76,10 +88,51 @@ Only take an action after all the above reasoning is completed. Once you've take
 ## Variables
 None - this is a system-level prompt meant to be prepended to other instructions.
 
+```
+
+## Why It Works
+
+This prompt externalizes the reasoning process that experts do implicitly. By requiring explicit consideration of dependencies, risks, and hypotheses before action, it prevents the common AI failure mode of jumping to solutions without understanding the problem.
+
+The 9-step framework is based on how experienced engineers approach complex problems:
+1. Dependencies first (what blocks what)
+2. Risk assessment (what could go wrong)
+3. Hypothesis generation (what could be causing this)
+4. Adaptation (update plan based on new info)
+5. Information gathering (use all available sources)
+6. Precision (cite specific evidence)
+7. Completeness (don't miss requirements)
+8. Persistence (don't give up early)
+9. Verification (confirm before declaring done)
+
+## Example
+
+Without structured reasoning:
+```
+User: The API is returning 500 errors
+AI: Try adding error handling around the database call
+[Jumps to a guess without investigation]
+```
+
+With structured reasoning:
+```
+User: The API is returning 500 errors
+AI: 
+Step 1 (Dependencies): Need to identify which endpoint before debugging
+Step 3 (Hypotheses): 
+  H1: Database connection issue (check logs)
+  H2: Invalid request payload (check input validation)
+  H3: External service timeout (check dependencies)
+Step 5 (Information): Checking server logs first...
+[Logs show auth middleware throwing]
+Step 4 (Adaptation): Updating hypothesis - likely auth config issue
+[Investigates auth, finds expired JWT secret]
+Step 9 (Verification): Rotating secret and confirming fix
+```
+
 ## Notes
-- Best used as a system prompt or prepended to task-specific instructions
-- Particularly effective for complex multi-step tasks, debugging, and problem-solving
-- The numbered hierarchy helps AI maintain structured thinking throughout a session
-- Works well with Claude's extended thinking mode for even deeper reasoning
-- The "ICOT" reference in 7.2.2 appears to be domain-specific (Internal Context/Operations Tool) - adapt or remove based on your use case
-- Pairs well with other coding prompts like `ultrathink-code-craftsman.md` for comprehensive AI guidance
+
+- This is a system prompt - use at session start
+- Verbose output is intentional; it shows the reasoning
+- Can be shortened by removing steps 6-7 for simpler tasks
+- Pairs well with decomposition for very large tasks
