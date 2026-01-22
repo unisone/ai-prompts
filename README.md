@@ -111,7 +111,7 @@ ai-prompts/
 <tr>
 <td width="50%">
 
-### 🔍 Code Review Checklist
+### Code Review Checklist
 **File:** `coding/code-review-checklist.md`
 
 10-point systematic review covering:
@@ -125,7 +125,7 @@ ai-prompts/
 </td>
 <td width="50%">
 
-### 🐛 Systematic Debugging
+### Systematic Debugging
 **File:** `coding/debug-systematic.md`
 
 8-step debugging methodology:
@@ -139,7 +139,7 @@ ai-prompts/
 <tr>
 <td width="50%">
 
-### ♻️ Refactor Safely
+### Refactor Safely
 **File:** `coding/refactor-safely.md`
 
 5-phase approach to safe refactoring:
@@ -150,7 +150,7 @@ Assessment → Safety Net → Incremental Changes → Verification → Cleanup
 </td>
 <td width="50%">
 
-### 🧪 Test Generator
+### Test Generator
 **File:** `coding/test-generator.md`
 
 Generate comprehensive tests:
@@ -165,7 +165,7 @@ Generate comprehensive tests:
 <tr>
 <td width="50%">
 
-### 🗺️ Explain Codebase
+### Explain Codebase
 **File:** `coding/explain-codebase.md`
 
 9-part analysis for unfamiliar codebases:
@@ -176,7 +176,7 @@ Architecture → Entry points → Data flow → Dependencies → Patterns
 </td>
 <td width="50%">
 
-### 🧠 Code Craftsman
+### Code Craftsman
 **File:** `coding/ultrathink-code-craftsman.md`
 
 Philosophy-driven system prompt that transforms AI from code generator to software craftsman.
