@@ -1,8 +1,18 @@
 # Funding platforms for AI Prompts Library
+# These links appear as "Sponsor" button on the repository
 # https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository
 
+# GitHub Sponsors - recurring donations (requires enrollment)
 github: unisone
-# patreon: # Uncomment and add username when available
-# ko_fi: # Uncomment and add username when available
-# buy_me_a_coffee: # Uncomment and add username when available
-# custom: ['https://your-custom-link.com']
+
+# Buy Me a Coffee - one-time tips (instant setup)
+buy_me_a_coffee: alexzay
+
+# Ko-fi - tips + memberships (instant setup)
+ko_fi: alexzay
+
+# Patreon - subscription tiers (instant setup)
+patreon: alexzay
+
+# Custom links (optional)
+# custom: ['https://your-domain.com/donate']
