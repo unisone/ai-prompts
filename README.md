@@ -24,40 +24,40 @@
 
 <br/>
 
-[⚡ Quick Start](#-quick-start) • [📁 Categories](#-categories) • [🤝 Contributing](#-contributing) • [💡 Best Practices](#-prompt-engineering-tips) • [🛠️ Development](#%EF%B8%8F-development)
+[Quick Start](#-quick-start) | [Categories](#-categories) | [Pro Prompts](#-pro-prompts-for-sponsors) | [Contributing](#-contributing)
 
 </div>
 
 ---
 
-## ✨ What's Inside
+## What's Inside
 
 Battle-tested prompts optimized for **Claude Code**, **Claude Opus 4.5**, **GPT-5.2**, and other frontier models. Each prompt follows a consistent template with variables, examples, and usage notes.
 
 ```
-  ┌─────────────────────────────────────────────────────────────────┐
-  │                                                                 │
-  │   📦 PROMPT ANATOMY                                             │
-  │   ─────────────────                                             │
-  │                                                                 │
-  │   ┌───────────────┐                                             │
-  │   │  # Title      │ ← What it's called                          │
-  │   ├───────────────┤                                             │
-  │   │  Description  │ ← What it does                              │
-  │   ├───────────────┤                                             │
-  │   │  Prompt       │ ← The actual prompt text                    │
-  │   ├───────────────┤                                             │
-  │   │  {{vars}}     │ ← Customizable placeholders                 │
-  │   ├───────────────┤                                             │
-  │   │  Examples     │ ← Real usage samples                        │
-  │   ├───────────────┤                                             │
-  │   │  Notes        │ ← Tips & model recommendations              │
-  │   └───────────────┘                                             │
-  │                                                                 │
-  └─────────────────────────────────────────────────────────────────┘
+  +-----------------------------------------------------------------+
+  |                                                                 |
+  |   PROMPT ANATOMY                                                |
+  |   --------------                                                |
+  |                                                                 |
+  |   +---------------+                                             |
+  |   |  # Title      | <- What it's called                         |
+  |   +---------------+                                             |
+  |   |  Description  | <- What it does                             |
+  |   +---------------+                                             |
+  |   |  Prompt       | <- The actual prompt text                   |
+  |   +---------------+                                             |
+  |   |  {{vars}}     | <- Customizable placeholders                |
+  |   +---------------+                                             |
+  |   |  Examples     | <- Real usage samples                       |
+  |   +---------------+                                             |
+  |   |  Notes        | <- Tips and model recommendations           |
+  |   +---------------+                                             |
+  |                                                                 |
+  +-----------------------------------------------------------------+
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Clone the repository
@@ -69,64 +69,132 @@ cd ai-prompts && ls -la coding/
 
 **Or** just copy any prompt directly from GitHub into your AI assistant of choice.
 
-## 📁 Categories
+## Categories
 
 ```
 ai-prompts/
-│
-├── 💻 coding/        # Code review, debugging, architecture, system prompts
-│   ├── ultrathink-code-craftsman.md
-│   └── structured-reasoning-planner.md
-│
-├── ✍️  writing/       # Blog posts, documentation, copywriting, editing
-│
-├── 📊 analysis/      # Data analysis, summarization, insights extraction
-│
-├── 🎨 creative/      # Creative writing, brainstorming, problem-solving
-│
-├── 🔬 research/      # Fact-checking, literature review, competitive analysis
-│
-└── 📋 templates/     # Base templates for creating new prompts
-    └── example-prompt.md
+|
++-- coding/        # Code review, debugging, architecture, system prompts
+|   +-- ultrathink-code-craftsman.md
+|   +-- structured-reasoning-planner.md
+|
++-- writing/       # Blog posts, documentation, copywriting, editing
+|
++-- analysis/      # Data analysis, summarization, insights extraction
+|
++-- creative/      # Creative writing, brainstorming, problem-solving
+|
++-- research/      # Fact-checking, literature review, competitive analysis
+|
++-- templates/     # Base templates for creating new prompts
+    +-- example-prompt.md
 ```
 
 | Folder | Description | Use Cases |
 |--------|-------------|-----------|
-| [`coding/`](./coding) | Programming & development | Code review, debugging, architecture, system prompts |
+| [`coding/`](./coding) | Programming and development | Code review, debugging, architecture, system prompts |
 | [`writing/`](./writing) | Content creation | Blog posts, documentation, copywriting, editing |
-| [`analysis/`](./analysis) | Data & research | Data analysis, summarization, insights extraction |
-| [`creative/`](./creative) | Ideation & brainstorming | Creative writing, brainstorming, problem-solving |
+| [`analysis/`](./analysis) | Data and research | Data analysis, summarization, insights extraction |
+| [`creative/`](./creative) | Ideation and brainstorming | Creative writing, brainstorming, problem-solving |
 | [`research/`](./research) | Information gathering | Fact-checking, literature review, competitive analysis |
 | [`templates/`](./templates) | Reusable structures | Base templates for creating new prompts |
 
-## 🎯 Featured Prompts
+## Featured Prompts
 
 <table>
 <tr>
 <td width="50%">
 
-### 🧙‍♂️ Code Craftsman
+### Code Craftsman
 **Category:** `coding/`
 
 Philosophy-driven prompt that transforms AI from code generator to software craftsman. Think different. Obsess over details. Craft, don't code.
 
-[→ View Prompt](./coding/ultrathink-code-craftsman.md)
+[View Prompt](./coding/ultrathink-code-craftsman.md)
 
 </td>
 <td width="50%">
 
-### 🧠 Structured Reasoning Planner
+### Structured Reasoning Planner
 **Category:** `coding/`
 
 Methodical reasoning with 9-step framework: logical dependencies, risk assessment, abductive reasoning, and persistent problem-solving.
 
-[→ View Prompt](./coding/structured-reasoning-planner.md)
+[View Prompt](./coding/structured-reasoning-planner.md)
 
 </td>
 </tr>
 </table>
 
-## 📝 Prompt Template
+---
+
+## Pro Prompts for Sponsors
+
+<div align="center">
+
+**The prompts above are good. The ones below built a 577-file production app.**
+
+[![Sponsor](https://img.shields.io/badge/Unlock_Pro_Prompts-$5/month-EA4AAA?style=for-the-badge&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/unisone)
+
+</div>
+
+### What Sponsors Get
+
+| Free (This Repo) | Pro (Sponsors Only) |
+|------------------|---------------------|
+| General-purpose prompts | Production system prompts I use daily |
+| Basic templates | Multi-file refactoring patterns |
+| Community examples | "Ship Feature in 2 Hours" workflow |
+| | Senior code review prompt (catches security issues) |
+| | API architect system prompt |
+| | TDD workflow that works with AI |
+| | New prompts added monthly |
+
+### Pro Prompt Preview
+
+These prompts are in the **sponsors-only repository**:
+
+```
+ai-prompts-pro/
+|
++-- system-prompts/
+|   +-- full-stack-ai-engineer.md      # The exact prompt I use daily
+|   +-- code-review-senior.md          # Catches bugs juniors miss
+|   +-- api-architect.md               # Design scalable APIs first try
+|
++-- patterns/
+|   +-- multi-file-refactor.md         # Refactor 50+ files safely
+|   +-- test-driven-ai.md              # TDD that works with AI
+|   +-- debug-production.md            # Systematic debugging
+|
++-- workflows/
+    +-- ship-feature-fast.md           # Feature dev in < 2 hours
+    +-- fix-bug-systematic.md          # Never chase wrong solutions
+```
+
+### Real Results
+
+These prompts helped me build:
+
+| Metric | Result |
+|--------|--------|
+| TypeScript files | 577 |
+| API endpoints | 55 |
+| Test files | 84 |
+| Critical production bugs | 0 |
+| Time to ship features | < 2 hours |
+
+<div align="center">
+
+[![Become a Sponsor](https://img.shields.io/badge/Become_a_Sponsor-$5/month-EA4AAA?style=for-the-badge&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/unisone)
+
+*Your sponsorship funds continued research and new prompt development.*
+
+</div>
+
+---
+
+## Prompt Template
 
 ```markdown
 # Prompt Name
@@ -149,37 +217,37 @@ A filled-in example showing the prompt in action.
 - Known limitations
 ```
 
-## 🤝 Contributing
+## Contributing
 
-We welcome contributions from the community! Whether you're submitting a new prompt, improving an existing one, or fixing a typo — every contribution helps.
+We welcome contributions from the community! Whether you're submitting a new prompt, improving an existing one, or fixing a typo - every contribution helps.
 
 ```
-┌────────────────────────────────────────────────────────────────┐
-│  🚀 CONTRIBUTION WORKFLOW                                      │
-│  ════════════════════════                                      │
-│                                                                │
-│  ① Fork & Clone       →  git clone your-fork                  │
-│  ② Create Branch      →  git checkout -b feat/my-prompt       │
-│  ③ Add Prompt         →  Follow templates/example-prompt.md   │
-│  ④ Test with AI       →  Verify with at least one model       │
-│  ⑤ Submit PR          →  Use our PR template                  │
-│                                                                │
-│  📖 Full guide: CONTRIBUTING.md                                │
-│  📋 Code of Conduct: CODE_OF_CONDUCT.md                        │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
++----------------------------------------------------------------+
+|  CONTRIBUTION WORKFLOW                                         |
+|  =====================                                         |
+|                                                                |
+|  1. Fork and Clone    ->  git clone your-fork                  |
+|  2. Create Branch     ->  git checkout -b feat/my-prompt       |
+|  3. Add Prompt        ->  Follow templates/example-prompt.md   |
+|  4. Test with AI      ->  Verify with at least one model       |
+|  5. Submit PR         ->  Use our PR template                  |
+|                                                                |
+|  Full guide: CONTRIBUTING.md                                   |
+|  Code of Conduct: CODE_OF_CONDUCT.md                           |
+|                                                                |
++----------------------------------------------------------------+
 ```
 
 ### Quick Links
 
 | Resource | Description |
 |----------|-------------|
-| [📖 Contributing Guide](CONTRIBUTING.md) | Detailed contribution instructions, style guide, and checklist |
-| [📋 Code of Conduct](CODE_OF_CONDUCT.md) | Community standards and expectations |
-| [🔒 Security Policy](.github/SECURITY.md) | How to report vulnerabilities |
-| [🐛 Report a Bug](https://github.com/unisone/ai-prompts/issues/new?template=bug-report.yml) | Found an issue? Let us know |
-| [💡 Request Feature](https://github.com/unisone/ai-prompts/issues/new?template=feature-request.yml) | Suggest improvements |
-| [✨ Submit New Prompt](https://github.com/unisone/ai-prompts/issues/new?template=new-prompt.yml) | Share your prompt idea |
+| [Contributing Guide](CONTRIBUTING.md) | Detailed contribution instructions, style guide, and checklist |
+| [Code of Conduct](CODE_OF_CONDUCT.md) | Community standards and expectations |
+| [Security Policy](.github/SECURITY.md) | How to report vulnerabilities |
+| [Report a Bug](https://github.com/unisone/ai-prompts/issues/new?template=bug-report.yml) | Found an issue? Let us know |
+| [Request Feature](https://github.com/unisone/ai-prompts/issues/new?template=feature-request.yml) | Suggest improvements |
+| [Submit New Prompt](https://github.com/unisone/ai-prompts/issues/new?template=new-prompt.yml) | Share your prompt idea |
 
 ### Naming Convention
 
@@ -196,13 +264,13 @@ analysis/sentiment-analyzer.md
 
 New to open source? Here's how to get started:
 
-1. **Browse [open issues](https://github.com/unisone/ai-prompts/issues)** — look for `good first issue` labels
-2. **Read [CONTRIBUTING.md](CONTRIBUTING.md)** — understand our guidelines
-3. **Fork the repo** — click the Fork button at the top right
-4. **Make your changes** — follow the template structure
-5. **Open a PR** — we'll review it promptly!
+1. **Browse [open issues](https://github.com/unisone/ai-prompts/issues)** - look for `good first issue` labels
+2. **Read [CONTRIBUTING.md](CONTRIBUTING.md)** - understand our guidelines
+3. **Fork the repo** - click the Fork button at the top right
+4. **Make your changes** - follow the template structure
+5. **Open a PR** - we'll review it promptly!
 
-## 🛠️ Development
+## Development
 
 This project uses modern 2026 tooling for quality assurance.
 
@@ -210,12 +278,12 @@ This project uses modern 2026 tooling for quality assurance.
 
 | Tool | Purpose |
 |------|---------|
-| [![pnpm](https://img.shields.io/badge/pnpm-9.x-F69220?style=flat-square&logo=pnpm&logoColor=white)](https://pnpm.io) | Fast, disk-efficient package manager |
-| [![Node](https://img.shields.io/badge/Node-22.x-339933?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org) | JavaScript runtime |
-| [![Prettier](https://img.shields.io/badge/Prettier-3.x-F7B93E?style=flat-square&logo=prettier&logoColor=black)](https://prettier.io) | Code formatting |
-| [![Markdownlint](https://img.shields.io/badge/Markdownlint-0.17-000000?style=flat-square&logo=markdown&logoColor=white)](https://github.com/DavidAnson/markdownlint) | Markdown linting |
-| [![Husky](https://img.shields.io/badge/Husky-9.x-000000?style=flat-square&logo=git&logoColor=white)](https://typicode.github.io/husky) | Git hooks |
-| [![Commitlint](https://img.shields.io/badge/Commitlint-19.x-000000?style=flat-square&logo=conventionalcommits&logoColor=white)](https://commitlint.js.org) | Commit message linting |
+| [pnpm 9.x](https://pnpm.io) | Fast, disk-efficient package manager |
+| [Node 22.x](https://nodejs.org) | JavaScript runtime |
+| [Prettier 3.x](https://prettier.io) | Code formatting |
+| [Markdownlint](https://github.com/DavidAnson/markdownlint) | Markdown linting |
+| [Husky 9.x](https://typicode.github.io/husky) | Git hooks |
+| [Commitlint](https://commitlint.js.org) | Commit message linting |
 
 ### Local Setup
 
@@ -241,11 +309,11 @@ pnpm run format:md     # Fix markdown
 ### CI/CD Pipeline
 
 Every PR automatically runs:
-- ✅ **Markdownlint** — Enforces consistent markdown style
-- ✅ **Prettier** — Checks formatting
-- ✅ **CSpell** — Catches spelling errors
-- ✅ **Lychee** — Validates all links
-- ✅ **Prompt Validation** — Ensures required sections exist
+- Markdownlint - Enforces consistent markdown style
+- Prettier - Checks formatting
+- CSpell - Catches spelling errors
+- Lychee - Validates all links
+- Prompt Validation - Ensures required sections exist
 
 ### Automation
 
@@ -258,10 +326,10 @@ Every PR automatically runs:
 | **Labels** | Manual/push | Sync GitHub labels |
 | **Dependabot** | Weekly | Update dependencies |
 
-## 💡 Prompt Engineering Tips
+## Prompt Engineering Tips
 
 <details>
-<summary><strong>🎭 Role & Persona</strong></summary>
+<summary><strong>Role and Persona</strong></summary>
 
 Define a clear identity for the AI:
 ```
@@ -270,7 +338,7 @@ You are a senior software architect with 15 years of experience...
 </details>
 
 <details>
-<summary><strong>📋 Structured Output</strong></summary>
+<summary><strong>Structured Output</strong></summary>
 
 Request specific formats for consistent results:
 ```
@@ -284,7 +352,7 @@ Respond in this JSON format:
 </details>
 
 <details>
-<summary><strong>🔗 Chain of Thought</strong></summary>
+<summary><strong>Chain of Thought</strong></summary>
 
 For complex reasoning, ask the model to think step-by-step:
 ```
@@ -297,7 +365,7 @@ Then provide your recommendation.
 </details>
 
 <details>
-<summary><strong>🎯 Few-Shot Examples</strong></summary>
+<summary><strong>Few-Shot Examples</strong></summary>
 
 Provide examples of desired input/output:
 ```
@@ -314,7 +382,7 @@ Now analyze: {{user_input}}
 </details>
 
 <details>
-<summary><strong>⚡ 2026 Model-Specific Tips</strong></summary>
+<summary><strong>2026 Model-Specific Tips</strong></summary>
 
 | Model | Optimization |
 |-------|--------------|
@@ -325,7 +393,7 @@ Now analyze: {{user_input}}
 
 </details>
 
-## 🔧 Integration Ideas
+## Integration Ideas
 
 ### With Claude Code
 ```bash
@@ -347,7 +415,7 @@ const systemPrompt = await fetch(
 
 <div align="center">
 
-## 🌟 Contributors
+## Contributors
 
 Thanks to everyone who has contributed to this project!
 
@@ -358,18 +426,16 @@ Thanks to everyone who has contributed to this project!
 <br/><br/>
 
 ```
-╭─────────────────────────────────────────────────────────────────╮
-│                                                                 │
-│   Built with 🧠 by Alex Zaytsev                                │
-│   github.com/unisone                                            │
-│                                                                 │
-│   ⭐ Star this repo if you find it useful!                     │
-│   🤝 PRs welcome — check CONTRIBUTING.md                       │
-│   💖 Sponsor — github.com/sponsors/unisone                     │
-│                                                                 │
-╰─────────────────────────────────────────────────────────────────╯
++---------------------------------------------------------------------+
+|                                                                     |
+|   Built by Alex Zaytsev                                             |
+|   github.com/unisone                                                |
+|                                                                     |
+|   Star this repo if you find it useful                              |
+|   PRs welcome - check CONTRIBUTING.md                               |
+|   Sponsor for Pro prompts - github.com/sponsors/unisone             |
+|                                                                     |
++---------------------------------------------------------------------+
 ```
-
-<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=14&duration=4000&pause=2000&color=565f89&center=true&vCenter=true&width=400&lines=prompt+%3E+think+%3E+ship+%3E+repeat" alt="Footer Animation" />
 
 </div>
