@@ -91,6 +91,13 @@ ai-prompts/
 +-- analysis/      # 1 prompt: Data insights extraction
 |   +-- data-insights.md              # Patterns, anomalies, actions
 |
++-- techniques/    # 5 prompts: Research-backed meta-prompting methods
+|   +-- self-critique.md              # Self-review before finalizing
+|   +-- decomposition.md              # Break complex problems into parts
+|   +-- concise-output.md             # Control verbosity
+|   +-- context-first.md              # Gather context before solving
+|   +-- literal-instructions.md       # Claude 4.x explicit format
+|
 +-- creative/      # Coming soon
 +-- research/      # Coming soon
 +-- templates/     # Base templates for creating new prompts
@@ -101,9 +108,10 @@ ai-prompts/
 | [`coding/`](./coding) | 8 | Code review, debugging, testing, refactoring, API design |
 | [`writing/`](./writing) | 2 | Technical documentation, resume optimization |
 | [`analysis/`](./analysis) | 1 | Data insights extraction |
+| [`techniques/`](./techniques) | 5 | Self-critique, decomposition, concise output, context-first |
 | [`templates/`](./templates) | 1 | Base template for new prompts |
 
-**Total: 12 battle-tested prompts**
+**Total: 17 research-backed prompts**
 
 ## Featured Prompts
 
