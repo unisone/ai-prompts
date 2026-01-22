@@ -74,30 +74,36 @@ cd ai-prompts && ls -la coding/
 ```
 ai-prompts/
 |
-+-- coding/        # Code review, debugging, architecture, system prompts
-|   +-- ultrathink-code-craftsman.md
++-- coding/        # 8 prompts: Code review, debugging, testing, refactoring
+|   +-- code-review-checklist.md      # 10-point security & logic review
+|   +-- debug-systematic.md           # 8-step debugging methodology
+|   +-- refactor-safely.md            # 5-phase safe refactoring
+|   +-- api-endpoint-design.md        # REST/GraphQL design template
+|   +-- test-generator.md             # Happy path + edge cases
+|   +-- explain-codebase.md           # Understand unfamiliar code
+|   +-- ultrathink-code-craftsman.md  # Philosophy-driven system prompt
 |   +-- structured-reasoning-planner.md
 |
-+-- writing/       # Blog posts, documentation, copywriting, editing
++-- writing/       # 2 prompts: Technical docs, resume optimization
+|   +-- technical-documentation.md    # README, API docs, runbooks
+|   +-- ultrathink-resume-architect.md
 |
-+-- analysis/      # Data analysis, summarization, insights extraction
++-- analysis/      # 1 prompt: Data insights extraction
+|   +-- data-insights.md              # Patterns, anomalies, actions
 |
-+-- creative/      # Creative writing, brainstorming, problem-solving
-|
-+-- research/      # Fact-checking, literature review, competitive analysis
-|
++-- creative/      # Coming soon
++-- research/      # Coming soon
 +-- templates/     # Base templates for creating new prompts
-    +-- example-prompt.md
 ```
 
-| Folder | Description | Use Cases |
-|--------|-------------|-----------|
-| [`coding/`](./coding) | Programming and development | Code review, debugging, architecture, system prompts |
-| [`writing/`](./writing) | Content creation | Blog posts, documentation, copywriting, editing |
-| [`analysis/`](./analysis) | Data and research | Data analysis, summarization, insights extraction |
-| [`creative/`](./creative) | Ideation and brainstorming | Creative writing, brainstorming, problem-solving |
-| [`research/`](./research) | Information gathering | Fact-checking, literature review, competitive analysis |
-| [`templates/`](./templates) | Reusable structures | Base templates for creating new prompts |
+| Folder | Prompts | Highlights |
+|--------|---------|------------|
+| [`coding/`](./coding) | 8 | Code review, debugging, testing, refactoring, API design |
+| [`writing/`](./writing) | 2 | Technical documentation, resume optimization |
+| [`analysis/`](./analysis) | 1 | Data insights extraction |
+| [`templates/`](./templates) | 1 | Base template for new prompts |
+
+**Total: 12 battle-tested prompts**
 
 ## Featured Prompts
 
@@ -105,22 +111,77 @@ ai-prompts/
 <tr>
 <td width="50%">
 
-### Code Craftsman
-**Category:** `coding/`
+### 🔍 Code Review Checklist
+**File:** `coding/code-review-checklist.md`
 
-Philosophy-driven prompt that transforms AI from code generator to software craftsman. Think different. Obsess over details. Craft, don't code.
+10-point systematic review covering:
+- Logic errors (off-by-one, null checks)
+- Security vulnerabilities (injection, XSS)
+- Performance anti-patterns
+- Edge case handling
 
-[View Prompt](./coding/ultrathink-code-craftsman.md)
+[View Prompt](./coding/code-review-checklist.md)
 
 </td>
 <td width="50%">
 
-### Structured Reasoning Planner
-**Category:** `coding/`
+### 🐛 Systematic Debugging
+**File:** `coding/debug-systematic.md`
 
-Methodical reasoning with 9-step framework: logical dependencies, risk assessment, abductive reasoning, and persistent problem-solving.
+8-step debugging methodology:
+1. Reproduce → 2. Observe → 3. Hypothesize →
+4. Test → 5. Trace → 6. Verify → 7. Root cause → 8. Fix
 
-[View Prompt](./coding/structured-reasoning-planner.md)
+[View Prompt](./coding/debug-systematic.md)
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+### ♻️ Refactor Safely
+**File:** `coding/refactor-safely.md`
+
+5-phase approach to safe refactoring:
+Assessment → Safety Net → Incremental Changes → Verification → Cleanup
+
+[View Prompt](./coding/refactor-safely.md)
+
+</td>
+<td width="50%">
+
+### 🧪 Test Generator
+**File:** `coding/test-generator.md`
+
+Generate comprehensive tests:
+- Happy path scenarios
+- Boundary conditions
+- Error handling cases
+
+[View Prompt](./coding/test-generator.md)
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+### 🗺️ Explain Codebase
+**File:** `coding/explain-codebase.md`
+
+9-part analysis for unfamiliar codebases:
+Architecture → Entry points → Data flow → Dependencies → Patterns
+
+[View Prompt](./coding/explain-codebase.md)
+
+</td>
+<td width="50%">
+
+### 🧠 Code Craftsman
+**File:** `coding/ultrathink-code-craftsman.md`
+
+Philosophy-driven system prompt that transforms AI from code generator to software craftsman.
+
+[View Prompt](./coding/ultrathink-code-craftsman.md)
 
 </td>
 </tr>
