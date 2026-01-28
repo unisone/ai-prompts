@@ -64,7 +64,7 @@ Each prompt includes: **Description** | **When to Use** | **The Prompt** | **Why
 
 ## Quick Reference
 
-All 29 prompts at a glance:
+All 46 prompts at a glance:
 
 | Prompt | Problem Solved | File |
 |--------|---------------|------|
