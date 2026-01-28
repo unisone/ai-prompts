@@ -5,12 +5,27 @@
 **Battle-tested prompts for Claude, GPT, and Gemini**
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Prompts](https://img.shields.io/badge/Prompts-29-green.svg)](#quick-reference)
+[![Prompts](https://img.shields.io/badge/Prompts-34-green.svg)](#quick-reference)
+[![Claude 4.5](https://img.shields.io/badge/Claude_4.5-Optimized-blueviolet.svg)](#2026-updates)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 [Quick Start](#quick-start) | [Browse Prompts](#quick-reference) | [By Problem](#browse-by-problem) | [Contributing](#contributing)
 
 </div>
+
+---
+
+## 🆕 2026 Updates
+
+**Claude 4.5 changed everything.** The new model is more literal and precise — old prompts that relied on Claude "filling in the blanks" now underperform. We've added 5 new techniques optimized for 2026:
+
+| Technique | What It Does |
+|-----------|-------------|
+| [XML Structured](./techniques/xml-structured.md) | Structure prompts with tags Claude natively understands |
+| [Extended Thinking](./techniques/extended-thinking.md) | Force step-by-step reasoning for complex problems |
+| [Self-Correcting](./techniques/self-correcting.md) | Built-in verification to catch hallucinations |
+| [Anti-Botspeak](./techniques/anti-botspeak.md) | Avoid phrases that scream "AI wrote this" |
+| [Permission to Fail](./techniques/permission-to-fail.md) | Get honest "I don't know" instead of confident lies |
 
 ---
 
@@ -58,6 +73,11 @@ All 29 prompts at a glance:
 | [Interview First](#interview-first) | Vague requests produce wrong outputs | [techniques/interview-first.md](./techniques/interview-first.md) |
 | [Deep Reasoning](#deep-reasoning) | Complex problems need thorough analysis | [techniques/deep-reasoning.md](./techniques/deep-reasoning.md) |
 | [GPT to Claude](#gpt-to-claude) | GPT prompts underperform in Claude | [techniques/gpt-to-claude-converter.md](./techniques/gpt-to-claude-converter.md) |
+| [XML Structured](#xml-structured) | Complex prompts get inconsistent results | [techniques/xml-structured.md](./techniques/xml-structured.md) |
+| [Extended Thinking](#extended-thinking) | Need thorough analysis on complex problems | [techniques/extended-thinking.md](./techniques/extended-thinking.md) |
+| [Self-Correcting](#self-correcting) | AI hallucinations cost you time | [techniques/self-correcting.md](./techniques/self-correcting.md) |
+| [Anti-Botspeak](#anti-botspeak) | AI text sounds obviously AI-generated | [techniques/anti-botspeak.md](./techniques/anti-botspeak.md) |
+| [Permission to Fail](#permission-to-fail) | Confident wrong answers | [techniques/permission-to-fail.md](./techniques/permission-to-fail.md) |
 | **Coding** | | |
 | [Code Review Checklist](#code-review-checklist) | Missing bugs in code review | [coding/code-review-checklist.md](./coding/code-review-checklist.md) |
 | [Code Review Expert](#code-review-expert) | Nitpicky reviews miss real issues | [coding/code-review-expert.md](./coding/code-review-expert.md) |
