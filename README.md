@@ -5,7 +5,7 @@
 **Battle-tested prompts for Claude, GPT, and Gemini**
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Prompts](https://img.shields.io/badge/Prompts-34-green.svg)](#quick-reference)
+[![Prompts](https://img.shields.io/badge/Prompts-46-green.svg)](#quick-reference)
 [![Claude 4.5](https://img.shields.io/badge/Claude_4.5-Optimized-blueviolet.svg)](#2026-updates)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
@@ -39,6 +39,10 @@
   - [Techniques](#techniques)
   - [Writing](#writing)
   - [Analysis](#analysis)
+  - [Agents](#agents) 🆕
+  - [Sales](#sales) 🆕
+  - [Marketing](#marketing) 🆕
+  - [Images](#images) 🆕
 - [Prompt Format](#prompt-format)
 - [Pro Prompts](#pro-prompts-for-sponsors)
 - [Contributing](#contributing)
@@ -104,6 +108,22 @@ All 29 prompts at a glance:
 | **Templates** | | |
 | [CLAUDE.md Template](#claude-md-template) | AI agents struggle with your codebase | [templates/claude-md-template.md](./templates/claude-md-template.md) |
 | [Example Prompt](#example-prompt) | How to format new prompts | [templates/example-prompt.md](./templates/example-prompt.md) |
+| **Agents** 🆕 | | |
+| [Orchestration Patterns](#orchestration-patterns) | Complex tasks need multiple perspectives | [agents/orchestration-patterns.md](./agents/orchestration-patterns.md) |
+| [Plan-Then-Execute](#plan-then-execute) | AI dives in without thinking | [agents/plan-then-execute.md](./agents/plan-then-execute.md) |
+| [Memory Persistence](#memory-persistence) | Context lost between sessions | [agents/memory-persistence.md](./agents/memory-persistence.md) |
+| **Sales** 🆕 | | |
+| [Discovery Call Framework](#discovery-call) | Unstructured sales conversations | [sales/discovery-call.md](./sales/discovery-call.md) |
+| [Objection Handling](#objection-handling) | Stuck when prospects push back | [sales/objection-handling.md](./sales/objection-handling.md) |
+| [Cold Outreach](#cold-outreach) | Low response rates on outreach | [sales/cold-outreach.md](./sales/cold-outreach.md) |
+| **Marketing** 🆕 | | |
+| [Hook Generator](#hook-generator) | Content doesn't grab attention | [marketing/hook-generator.md](./marketing/hook-generator.md) |
+| [Content Repurposing](#content-repurposing) | Creating content takes too long | [marketing/content-repurposing.md](./marketing/content-repurposing.md) |
+| [Ad Copy Frameworks](#ad-copy-frameworks) | Ads don't convert | [marketing/ad-copy-frameworks.md](./marketing/ad-copy-frameworks.md) |
+| **Images** 🆕 | | |
+| [Photo-Realistic](#photo-realistic) | AI images look fake | [images/photo-realistic.md](./images/photo-realistic.md) |
+| [Style Consistency](#style-consistency) | Each image looks different | [images/style-consistency.md](./images/style-consistency.md) |
+| [Product Mockups](#product-mockups) | Need product photos fast | [images/product-mockups.md](./images/product-mockups.md) |
 
 ---
 
