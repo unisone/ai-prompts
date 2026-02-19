@@ -18,7 +18,7 @@ Security vulnerabilities should not be disclosed publicly until they have been a
 
 Please report security vulnerabilities by emailing:
 
-**📧 [GitHub Issues](https://github.com/unisone/ai-prompts/issues)**
+**📧 [GitHub Security Advisories](https://github.com/unisone/ai-prompts/security/advisories)**
 
 Include the following information:
 - Description of the vulnerability

@@ -2,7 +2,7 @@
   "name": "ai-prompts",
   "version": "1.0.0",
   "description": "Curated collection of production-ready AI prompts for Claude, GPT, and Gemini",
-  "author": "Alex Zaytsev <[GitHub Issues](https://github.com/unisone/ai-prompts/issues)>",
+  "author": "unisone (https://github.com/unisone)",
   "license": "MIT",
   "repository": {
     "type": "git",
