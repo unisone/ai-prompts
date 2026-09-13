@@ -5,7 +5,7 @@
 **Battle-tested prompts for Claude, GPT, and Gemini**
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Prompts](https://img.shields.io/badge/Prompts-52-green.svg)](#quick-reference)
+[![Prompts](https://img.shields.io/badge/Prompts-54-green.svg)](#quick-reference)
 [![Claude 4.5](https://img.shields.io/badge/Claude_4.5-Optimized-blueviolet.svg)](#2026-updates)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
@@ -64,7 +64,7 @@ Each prompt includes: **Description** | **When to Use** | **The Prompt** | **Why
 
 ## Quick Reference
 
-All 52 prompts at a glance:
+All 54 prompts at a glance:
 
 | Prompt | Problem Solved | File |
 |--------|---------------|------|
@@ -116,6 +116,9 @@ All 52 prompts at a glance:
 | [Knowledge Graph Schema Designer](#knowledge-graph-schema-designer) | Extraction chaos from schema-free graphs | [graphs/knowledge-graph-schema-designer.md](./graphs/knowledge-graph-schema-designer.md) |
 | [GraphRAG Pipeline Builder](#graphrag-pipeline-builder) | RAG can't follow relationships | [graphs/graphrag-pipeline-builder.md](./graphs/graphrag-pipeline-builder.md) |
 | [Cypher Query Assistant](#cypher-query-assistant) | Writing and debugging Cypher queries | [graphs/cypher-query-assistant.md](./graphs/cypher-query-assistant.md) |
+| **Frontier Models** 🆕 | | |
+| [Fable Deep Delegation](#fable-deep-delegation) | Delegating multi-hour workstreams to Claude Fable 5.1 | [frontier-models/fable-deep-delegation.md](./frontier-models/fable-deep-delegation.md) |
+| [Astra Verified Operator](#astra-verified-operator) | Computer-use tasks with GPT-6 Astra, evidence-verified | [frontier-models/astra-verified-operator.md](./frontier-models/astra-verified-operator.md) |
 | [Eval-Driven Prompt Design](#eval-driven-prompt-design) | Unsure if a prompt actually works | [agents/eval-driven-prompt-design.md](./agents/eval-driven-prompt-design.md) |
 | [MCP Server Planner](#mcp-server-planner) | Designing an MCP server before coding | [agents/mcp-server-planner.md](./agents/mcp-server-planner.md) |
 | [Agent Team Orchestrator](#agent-team-orchestrator) | Coordinating parallel subagents | [agents/agent-team-orchestrator.md](./agents/agent-team-orchestrator.md) |
@@ -298,6 +301,7 @@ Star this repo if you find it useful
 | Monthly updates | ❌ | ✅ |
 
 **[Become a Sponsor →](https://github.com/sponsors/unisone)**
+
 
 
 
